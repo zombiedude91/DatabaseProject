@@ -40,19 +40,6 @@
                 </form>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-custom static-top">
-            <a class="navbar-brand" href="#">HOME</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#" style="color: black;">CATEGORIES</a>
-                <a class="nav-item nav-link" href="#" style="color: black;">PROMOTIONS</a>
-                <a class="nav-item nav-link" href="#" style="color: black;">ABOUT US</a>
-                </div>
-            </div>
-        </nav>
     
         <!-- Masthead -->
         <header class="masthead text-white text-center">
@@ -129,7 +116,7 @@
     
         <!-- Image Showcases -->
         <section class="showcase">
-            <div class="container-fluid p-5">
+            <div class="container-fluid p-0">
                 <div class="row no-gutters">
     
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/buy.jpg');"></div>
@@ -157,37 +144,13 @@
                 </div>
             </div>
         </section>
-        <div name="site-footer">
-            <footer class="footer py-3 bg-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-9">
-                            <form>
-                                <label for="email">Sign up to learn and get special offer </label>
-                                <input type="text" id="email" name="email" placeholder="E-mail" />
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-                                </svg><br><br>
-                                <h5>Contact Us</h5><br>
-                                <p>Email: &emsp;&emsp; friendlyneighborhood@gmail.com</p>
-                                <p>Address: &emsp; Bangkok 10000, Thailand</p>
-                            </form>
-                        </div>
-                        <div class="col-3" style="text-align: center;">
-                            <br><br><br><br>
-                            <h5 style="color: black;"> Follow Us </h5>
-                            <img style="height: 30px; width: 30px;" src="./Image/facebook.png">
-                            <img style="height: 30px; width: 30px;" src="./Image/instagram.png">
-                            <img style="height: 30px; width: 30px;" src="./Image/twitter.png">
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
     
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    
+    
     </body>
     
 </body>
