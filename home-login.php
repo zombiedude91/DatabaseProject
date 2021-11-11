@@ -61,8 +61,13 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                     <div class="float-right">
-                        <a class="btn btn-primary mr-2" href="login.php">Login</a>
-                        <a class="btn btn-secondary" href="signup.php">Sign Up</a>
+                        <a class="btn btn-secondary"
+                            <?php
+                                echo 
+                            ?>
+                            ></a>
+                        <!--<a class="btn btn-primary mr-2" href="login.php">Login</a>
+                        <a class="btn btn-secondary" href="signup.php">Sign Up</a>-->
                     </div>
                 </form>
             </div>

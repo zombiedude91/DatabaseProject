@@ -21,7 +21,7 @@
 					
 					<label>HistoryID</label>
 
-					 <input type="text" name="HistoryID">
+					<input type="text" name="HistoryID">
 					
 					<label>Service</label>
 
