@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    if (!isset($_SESSION["login"])) {
-        $_SESSION["login"] = "start";
-    }
-    if ($_SESSION["login"] == "False") {
-        $_SESSION["login"] = "start";
-    }
-?>
 <head>
     <head>
 
@@ -40,7 +32,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <!--<li class="nav-item active">
@@ -59,13 +50,8 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                     <div class="float-right">
-                        <a> <?php 
-                            echo $_POST["name"];
-                            echo $_POST["surname"];
-                            ?> 
-                        </a>
-                        <a class="btn btn-primary mr-2" href="profile.php">My Profile</a>
-                        <a class="btn btn-secondary" href="logout.php">Logout</a>
+                        <a class="btn btn-primary mr-2" href="login.php">Login</a>
+                        <a class="btn btn-secondary" href="signup.php">Sign Up</a>
                     </div>
                 </form>
             </div>
@@ -111,8 +97,6 @@
                                 <p class="lead mb-0">If you are an artist, sell your art here!</p>
                             </a>
                         </div>
-    
-    
                     </div>
     
                     <div class="col-lg-4">
@@ -127,6 +111,7 @@
                             </a>
                         </div>
                     </div>
+                    
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <a class="stretched-link" href="login.php  " style="text-decoration:none; color:black;">

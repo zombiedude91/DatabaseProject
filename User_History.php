@@ -1,5 +1,7 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -25,7 +27,13 @@
 
 	<nav class="navbar navbar-light bg-light static-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">Friendly-Neighborhood</a>
+			<a class="navbar-brand" href="home-1.php">Friendly-Neighborhood</a>
+			<form class="form-inline">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-secondary my-2 my-sm-0 mx-3" type="submit">Search</button>
+				<div class="float-right">
+					<a class="btn btn-primary mr-2" href="home-1.php">Home</a>
+				</div>
 			</form>
 		</div>
 	</nav>
@@ -46,18 +54,25 @@
 					<th>Date</th>
 					<th>Details</th>
 				</tr>
-				
+
+				<tr>
+					<td><?php echo "1";?></td> 
+					<td><?php echo "Fix air conditioner";?></td>
+					<td><?php echo "11/11/20";?></td>
+					<td><button class="btn btn-secondary my-2 my-sm-0 mx-3">Details</button></td>
+				</tr>				
+
 				<?php 
 					if (empty($_POST['submit'])) {
 						exit;
 				}
 				?>
-			   
+				
 				<tr>
 					<td><?php echo $_POST["HistoryID"];?></td> 
 					<td><?php echo $_POST["Service"];?></td>
 					<td><?php echo $_POST["Date"];?></td>
-					<td><img src="img/Details.png" width="48" height="26"></td>
+					<td><button class="btn btn-secondary my-2 my-sm-0 mx-3">Details</button></td>
 				</tr>
 				
 			</table>

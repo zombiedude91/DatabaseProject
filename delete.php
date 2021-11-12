@@ -1,20 +1,18 @@
 <?php
-session_start();
+    session_start();
 
-$mysqli = new mysqli('localhost', 'root', '', 'homeservice');
-if ($mysqli->connect_errno) {
-    echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
-}
+    $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+    if ($mysqli->connect_errno) {
+        echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+    }
 
-$q = "DELETE FROM cart WHERE CartID ='".$_GET["id"]."';";
+    $q = "DELETE FROM cart WHERE CartID ='".$_GET["id"]."';";
 
+    if (!$mysqli->query($q)) {
+        echo "UPDATE failed. Error: " . $mysqli->error;
+    }
 
-if (!$mysqli->query($q)) {
-    echo "UPDATE failed. Error: " . $mysqli->error;
-}
+    $mysqli->close();
 
-$mysqli->close();
-
-header("Location: cart.php");
-
+    header("Location: cart.php");
 ?>

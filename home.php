@@ -127,7 +127,7 @@
     
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/buy.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Buy</h2>
+                        <h2>Check up / Setting</h2>
                         <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
                         We hope you will enjoy to buy the art on Arty.</p>
                     </div>
@@ -136,14 +136,14 @@
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/browse.jpg');">
                     </div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Browse</h2>
+                        <h2>Clean up</h2>
                         <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p>
                     </div>
                 </div>
                 <div class="row no-gutters">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/sell.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Sell</h2>
+                        <h2>Maintenance</h2>
                         <p class="lead mb-0">Are you an artist? &nbsp; If yes, you can sell your art here. &nbsp;
                         Arty will make many user from around the world to see and buy your art from you.</p>
                     </div>
