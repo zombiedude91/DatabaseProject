@@ -123,6 +123,7 @@
             <br>
             <input type="radio" name="gender" value="male" checked>Male
             <input type="radio" name="gender" value="female">Female
+            <br>
 
             <br>
             <label for="address"><b>Address</b></label>

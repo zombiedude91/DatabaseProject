@@ -3,7 +3,7 @@
     if (isset($_POST["search"])) {
         $search = $_POST["search"];
     } else {
-        //$search = $_GET["id"];
+        $search = $_GET[""];
 
         $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
 
@@ -11,7 +11,7 @@
             echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
         }
 
-        $j = "SELECT ServiceName FROM Service WHERE ServiceName =".$_GET["id"].";";
+        $j = "SELECT ServiceName FROM Service WHERE ServiceName LIKE "%.$_GET["search"].%";";
 
         $a = mysqli_fetch_all($mysqli->query($j));
         $search = $a[0][0];
@@ -23,5 +23,5 @@
 
 
     //redirect
-    header("Location: shop.php?shopsearch=" . $search . "&id=".$_GET["id"]);
+    header("Location: shop.php?shopsearch=" . $search . "&search=".$_GET["search"]);
 ?>

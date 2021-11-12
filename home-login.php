@@ -60,8 +60,8 @@
                     </form>
                     <div class="float-right">
                         <a> <?php 
-                            echo $_POST["name"];
-                            echo $_POST["surname"];
+                            echo $_POST["firstname"];
+                            echo $_POST["lastname"];
                             ?> 
                         </a>
                         <a class="btn btn-primary mr-2" href="profile.php">My Profile</a>
