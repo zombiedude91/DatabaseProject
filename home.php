@@ -49,16 +49,16 @@
                         <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
                     </li>-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Tips</a>
+                        <a class="nav-link" href="tips.html">Tips</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="aboutus.html">About Us</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 mx-3">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <form action="searchservice" method="POST" role="form" class="form-inline my-2 my-lg-0">
+                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search for Service" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
                     </form>
                     <div class="float-right">
                         <a class="btn btn-primary mr-2" href="login.php">Login</a>
