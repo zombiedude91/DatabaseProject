@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
     
-        <title>Home</title>
+        <title>Signup</title>
     
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -107,7 +107,7 @@
             </div>
 
             <div class="container" >
-                <span class="psw">Don't have an account <a href="#">sign up</a></span>
+                <span class="psw">Don't have an account <a href="signup.php">sign up</a></span>
             </div>
         </form>
     </body>
