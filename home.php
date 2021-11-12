@@ -45,9 +45,9 @@
         
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
+                    <!--<li class="nav-item active">
                         <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
-                    </li>
+                    </li>-->
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Tips</a>
                     </li>
@@ -78,6 +78,14 @@
                     </div>
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                         <form action="shopfilter.php" method="POST" role="form">
+                            <!--<div class="form-row">
+                                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                    <input name="search" class="form-control form-control-lg" placeholder="Search for art">
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <button type="submit" class="btn btn-block btn-lg btn-primary">Browse</button>
+                                </div>
+                            </div>-->
                         </form>
                     </div>
                 </div>
@@ -85,24 +93,33 @@
         </header>
     
         <!-- Icons Grid -->
-        <section class="features-icons bg-light text-center">
+        <!--<section class="features-icons bg-light text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
+    
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <a class="stretched-link" href="login.php" style="text-decoration:none; color:black;">
-                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">
-                                <h3>Sell</h3>
+                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">-->
+                                <!--<div class="features-icons-icon d-flex">
+                                    <i class="icon-screen-desktop m-auto text-primary"></i>
+                                </div>-->
+                                <!--<h3>Sell</h3>
                                 <p class="lead mb-0">If you are an artist, sell your art here!</p>
                             </a>
                         </div>
+    
+    
                     </div>
     
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <a class="stretched-link" href="shopfilter.php" style="text-decoration:none; color:black;">
-                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">
-                                <h3>Browse</h3>
+                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">-->
+                                <!--<div class="features-icons-icon d-flex">
+                                    <i class="icon-layers m-auto text-primary"></i>
+                                </div>-->
+                                <!--<h3>Browse</h3>
                                 <p class="lead mb-0">Many artists have exhibited their art, see it here!</p>
                             </a>
                         </div>
@@ -110,24 +127,31 @@
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <a class="stretched-link" href="login.php  " style="text-decoration:none; color:black;">
-                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">
-                                <h3>Buy</h3>
+                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">-->
+                                <!--<div class="features-icons-icon d-flex">
+                                    <i class="icon-check m-auto text-primary"></i>
+                                </div>-->
+                                <!--<h3>Buy</h3>
                                 <p class="lead mb-0">If you want to buy some art, buy it here!</p>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
     
         <!-- Image Showcases -->
         <section class="showcase">
             <div class="container-fluid p-5">
+                <div class="py-5" style="text-align: center;">
+                    <!--font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;-->
+                    <h1 style="text-align: center;">Service Categories</h1>
+                </div>
                 <div class="row no-gutters">
     
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/buy.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Check up / Setting</h2>
+                        <h2>Buy</h2>
                         <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
                         We hope you will enjoy to buy the art on Arty.</p>
                     </div>
@@ -136,14 +160,14 @@
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/browse.jpg');">
                     </div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Clean up</h2>
+                        <h2>Browse</h2>
                         <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p>
                     </div>
                 </div>
                 <div class="row no-gutters">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/sell.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Maintenance</h2>
+                        <h2>Sell</h2>
                         <p class="lead mb-0">Are you an artist? &nbsp; If yes, you can sell your art here. &nbsp;
                         Arty will make many user from around the world to see and buy your art from you.</p>
                     </div>
@@ -151,7 +175,7 @@
             </div>
         </section>
         <div name="site-footer">
-            <footer class="footer py-3 bg-footer">
+            <footer class="footer" style="background-color:gainsboro;">
                 <div class="container">
                     <div class="row">
                         <div class="col-9">

@@ -102,15 +102,11 @@
     <body data-new-gr-c-s-check-loaded="14.1036.0" data-gr-ext-installed="">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Friendly Neighborhood</a>
-                <div class="float-right">
-    
-    
-                </div>
-    
-            </div>
+        <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
+            <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </nav>
     
         <div class="container">
