@@ -54,10 +54,10 @@
                         <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
                     </li>-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="tips.html">Tips</a>
+                        <a class="nav-link" href="tips.php">Tips</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="aboutus.html">About Us</a>
+                        <a class="nav-link" href="aboutus.php">About Us</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 mx-3">

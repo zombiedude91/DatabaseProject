@@ -1,19 +1,19 @@
 <?php
-  session_start();
+	session_start();
 
-  $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
-  
-  if ($mysqli->connect_errno) {
-    echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
-  }
-  $q = "SELECT BookingID, ServiceName, Date FROM booking, service WHERE BookingID = 1";
-  
-  if (!$mysqli->query($q))
-  echo "UPDATE failed. Error: " .$mysqli->error;
-  $result = $mysqli->query($q);
-  $row = $result->fetch_array();
+	$mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+	
+	if ($mysqli->connect_errno) {
+		echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+	}
+	$q = "SELECT BookingID, ServiceName, Date FROM booking, service WHERE BookingID = 1";
+	
+	if (!$mysqli->query($q))
+	echo "UPDATE failed. Error: " .$mysqli->error;
+	$result = $mysqli->query($q);
+	$row = $result->fetch_array();
 
-  $mysqli->close();
+	$mysqli->close();
 ?>
 
 <!DOCTYPE html>

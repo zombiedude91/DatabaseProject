@@ -1,3 +1,4 @@
+<?php session_start(); require_once('connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,21 +117,7 @@
                         <a class="nav-link" href="aboutus.html">About Us</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 mx-3">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                    <div class="float-right">
-                        <a> <?php 
-                            echo $_POST["name"];
-                            echo $_POST["surname"];
-                            ?> 
-                        </a>
-                        <a class="btn btn-primary mr-2" href="profile.php">My Profile</a>
-                        <a class="btn btn-secondary" href="logout.php">Logout</a>
-                    </div>
-                </form>
+                
             </div>
         </nav>
         <div class="container-fluid p-5">
