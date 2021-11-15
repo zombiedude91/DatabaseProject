@@ -1,7 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); require_once('connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
     if (!isset($_SESSION["login"])) {
         $_SESSION["login"] = "start";
@@ -9,6 +8,12 @@
     if ($_SESSION["login"] == "False") {
         $_SESSION["login"] = "start";
     }
+
+    $id = $_SESSION['uid'];
+
+    $q = "SELECT FirstName, LastName FROM user WHERE UserID = '$id'";
+    $row = mysqli_fetch_row($mysqli->query($q));
+    $mysqli->close();
 ?>
 <head>
     <head>
@@ -38,7 +43,7 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
-            <a class="navbar-brand px-3" style="font-weight:bolder;" href="#">Friendly-Neighborhood</a>
+            <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,20 +54,29 @@
                         <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
                     </li>-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="tips.php">Tips</a>
+                        <a class="nav-link" href="tips.html">Tips</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="aboutus.php">About Us</a>
+                        <a class="nav-link" href="aboutus.html">About Us</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 mx-3">
-                    <form action="searchservice" method="POST" role="form" class="form-inline my-2 my-lg-0">
-                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search for Service" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                     <div class="float-right">
-                        <a class="btn btn-primary mr-2" href="login.php">Login</a>
-                        <a class="btn btn-secondary" href="signup.php">Sign Up</a>
+                        <?php
+                        if ($_SESSION["login"] == "start") {
+                            echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
+                            echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
+                        }
+                        else {
+                            echo '<a>'.$row[0]." ".$row[1].'</a>';
+                            echo '<a class="btn btn-primary mr-2 ml-3" href="profile.php">My Profile</a>';
+                            echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
+                        }
+                        ?>
                     </div>
                 </form>
             </div>
@@ -91,54 +105,6 @@
                 </div>
             </div>
         </header>
-    
-        <!-- Icons Grid -->
-        <!--<section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-    
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <a class="stretched-link" href="login.php" style="text-decoration:none; color:black;">
-                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">-->
-                                <!--<div class="features-icons-icon d-flex">
-                                    <i class="icon-screen-desktop m-auto text-primary"></i>
-                                </div>-->
-                                <!--<h3>Sell</h3>
-                                <p class="lead mb-0">If you are an artist, sell your art here!</p>
-                            </a>
-                        </div>
-    
-    
-                    </div>
-    
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <a class="stretched-link" href="shopfilter.php" style="text-decoration:none; color:black;">
-                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">-->
-                                <!--<div class="features-icons-icon d-flex">
-                                    <i class="icon-layers m-auto text-primary"></i>
-                                </div>-->
-                                <!--<h3>Browse</h3>
-                                <p class="lead mb-0">Many artists have exhibited their art, see it here!</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <a class="stretched-link" href="login.php  " style="text-decoration:none; color:black;">
-                            <img src="/img/clean.jpg" style="width: 300px;height: fit-content;">-->
-                                <!--<div class="features-icons-icon d-flex">
-                                    <i class="icon-check m-auto text-primary"></i>
-                                </div>-->
-                                <!--<h3>Buy</h3>
-                                <p class="lead mb-0">If you want to buy some art, buy it here!</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>-->
     
         <!-- Image Showcases -->
         <section class="showcase">

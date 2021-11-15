@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
     
-        <title>Signup</title>
+        <title>Login</title>
     
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -95,17 +95,29 @@
             </button>
         </nav>
     
-        <form action="/action_page.php" method="post">
+        <form action="logincheck.php" method="post">
             <div class="container">
-            <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
+            <h1>Log In</h1>
+            <p>Log in to your account.</p>
             <hr><br><br>
                 <label for="email"><b>Email</b></label>
                 <input type="text" placeholder="Enter Email" name="email" required>
             
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-                    
+                
+                <?php
+
+					if (!isset($_SESSION["login"])) {
+						$_SESSION["login"] = "start";
+					}
+
+					if ($_SESSION["login"] == "False") {
+						echo '<p id="myPopup" style="color:red; text-align:center;">Incorrect Email or Password</p>';
+						$_SESSION["login"] = "start";
+					}
+					?>
+
                 <button type="submit">Login</button>
             </div>
 
