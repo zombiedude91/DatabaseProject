@@ -143,14 +143,34 @@ body {
     <body data-new-gr-c-s-check-loaded="14.1036.0" data-gr-ext-installed="">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Friendly Neighborhood</a>
-                <div class="float-right">
-    
-    
-                </div>
-    
+        <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
+            <a class="navbar-brand px-3" style="font-weight:bolder;" href="#">Friendly-Neighborhood</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!--<li class="nav-item active">
+                        <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
+                    </li>-->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="tips.php">Tips</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="aboutus.php">About Us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 mx-3">
+                    <form action="searchservice" method="POST" role="form" class="form-inline my-2 my-lg-0">
+                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search for Service" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+                    </form>
+                    <div class="float-right">
+                        <a class="btn btn-primary mr-2" href="login.php">Login</a>
+                        <a class="btn btn-secondary" href="signup.php">Sign Up</a>
+                    </div>
+                </form>
             </div>
         </nav>
         <div class="container-fluid">

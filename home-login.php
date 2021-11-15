@@ -60,6 +60,15 @@
                     </form>
                     <div class="float-right">
                         <a> <?php 
+                            $q='SELECT firstname, lastname FROM user';
+                            if($result=$mysqli->query($q)){
+                                while($row=$result->fetch_array()){
+                                    echo $_POST["firstname"];
+                                    echo $_POST["lastname"];
+                                }
+                            }else{
+                                echo 'Query error: '.$mysqli->error;
+                            }
                             echo $_POST["firstname"];
                             echo $_POST["lastname"];
                             ?> 
