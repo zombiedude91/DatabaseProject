@@ -1,4 +1,16 @@
-<?php session_start(); ?>
+<?php session_start(); require_once('connect.php'); ?>
+<?php
+
+$id = $_SESSION['uid'];
+  $q = "SELECT * FROM user WHERE UserID = '$id'";
+  
+  if (!$mysqli->query($q))
+  echo "UPDATE failed. Error: " .$mysqli->error;
+  $result = $mysqli->query($q);
+  $row = $result->fetch_array();
+
+  $mysqli->close();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,18 +23,45 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-          <a class="navbar-brand" href="home-1.php">Friendly-Neighborhood</a>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0 mx-3" type="submit">Search</button>
-            <div class="float-right">
-              <a class="btn btn-primary mr-2" href="home-1.php">Home</a>
+<nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
+            <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!--<li class="nav-item active">
+                        <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
+                    </li>-->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="tips.html">Tips</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 mx-3">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <div class="float-right">
+                        <?php
+                        if ($_SESSION["login"] == "start") {
+                            echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
+                            echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
+                        }
+                        else {
+                            echo '<a>'.$row[4]." ".$row[5].'</a>';
+                            echo '<a class="btn btn-primary mr-2 ml-3" href="userprofile.php">My Profile</a>';
+                            echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
+                        }
+                        ?>
+                    </div>
+                </form>
             </div>
-          </form>
-      </div>
-  </nav>
+        </nav>
   <div class="py-5" style="">
     <div class="container">
       <div class="row">
@@ -43,7 +82,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="col-md-12" style="">
-                    <h2 class="">#123456</h2>
+                    <h2 class=""><?php echo $row['UserID']; ?></h2>
                   </div>
                 </div>
               </div>
@@ -57,7 +96,7 @@
             </div>
             <div class="col-md-6">
               <div class="col-md-12">
-                <h2 class="">John</h2>
+                <h2 class=""><?php echo $row['FirstName']; ?></h2>
               </div>
             </div>
           </div>
@@ -69,7 +108,7 @@
             </div>
             <div class="col-md-6">
               <div class="col-md-12">
-                <h2 class="">Smith</h2>
+                <h2 class=""><?php echo $row['LastName']; ?></h2>
               </div>
             </div>
           </div>
@@ -81,7 +120,7 @@
             </div>
             <div class="col-md-6">
               <div class="col-md-12">
-                <h2 class="">Male</h2>
+                <h2 class=""><?php echo $row['Gender']; ?></h2>
               </div>
             </div>
           </div>
@@ -93,7 +132,7 @@
             </div>
             <div class="col-md-6">
               <div class="col-md-12">
-                <h2 class="">12/34 Bangkok</h2>
+                <h2 class=""><?php echo $row['Address']; ?></h2>
               </div>
             </div>
           </div>
@@ -105,7 +144,7 @@
             </div>
             <div class="col-md-6">
               <div class="col-md-12">
-                <h2 class="">085-555-5555</h2>
+                <h2 class=""><?php echo $row['PhoneNo']; ?></h2>
               </div>
             </div>
           </div>
@@ -117,7 +156,7 @@
             </div>
             <div class="col-md-6">
               <div class="col-md-12">
-                <h2 class="">john@gmail.com</h2>
+                <h2 class=""><?php echo $row['Email']; ?></h2>
               </div>
             </div>
           </div>
@@ -129,7 +168,7 @@
             </div>
             <div class="col-md-6" style="">
               <div class="col-md-12">
-                <h2 class="" contenteditable="true">********</h2>
+                <h2 class="" contenteditable="true"><?php echo $row['Password']; ?></h2>
               </div>
             </div>
           </div>

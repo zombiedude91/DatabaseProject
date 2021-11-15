@@ -1,4 +1,20 @@
-<?php session_start(); ?>
+<?php
+  session_start();
+
+  $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+  
+  if ($mysqli->connect_errno) {
+    echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+  }
+  $q = "SELECT BookingID, ServiceName, Date FROM booking, service WHERE BookingID = 1";
+  
+  if (!$mysqli->query($q))
+  echo "UPDATE failed. Error: " .$mysqli->error;
+  $result = $mysqli->query($q);
+  $row = $result->fetch_array();
+
+  $mysqli->close();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,9 +74,16 @@
 				<tr>
 					<td><?php echo "1";?></td> 
 					<td><?php echo "Fix air conditioner";?></td>
-					<td><?php echo "11/11/20";?></td>
+					<td><?php echo "2020-11-01";?></td>
 					<td><button class="btn btn-secondary my-2 my-sm-0 mx-3">Details</button></td>
 				</tr>				
+
+				<tr>
+					<td><?php echo $row['BookingID']; ?></td> 
+					<td><?php echo $row['ServiceName']; ?></td>
+					<td><?php echo $row['Date']; ?></td>
+					<td><button class="btn btn-secondary my-2 my-sm-0 mx-3">Details</button></td>
+				</tr>
 
 				<?php 
 					if (empty($_POST['submit'])) {
