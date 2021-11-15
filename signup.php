@@ -1,4 +1,4 @@
-<?php session_start(); require_once('connect.php');?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,9 +123,14 @@
             <br>
             <input type="radio" name="gender" value="male" checked>Male
             <input type="radio" name="gender" value="female">Female
-            <br>
+            <br><br>
 
+            <label for="usertype"><b>User Type</b></label>
             <br>
+            <input type="radio" name="usertype" value="user" checked>Customer
+            <input type="radio" name="usertype" value="female">Staff
+            <br><br>
+
             <label for="address"><b>Address</b></label>
             <input type="text" placeholder="Enter Address" name="address" required>
 
@@ -138,15 +143,11 @@
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
         
-            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <label for="psw-repeat"><b>Reenter Password</b></label>
             <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
             
-            <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>
-
             <div class="clearfix">
-                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="button" class="cancelbtn" href="home.php">Cancel</button>
                 <button type="submit" class="signupbtn">Sign Up</button>
             </div>
         </div>

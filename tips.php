@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
     
-        <title>tips</title>
+        <title>Tips</title>
     
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,15 +47,6 @@
         font-size: 40px;
     }
 
-    /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
-    .navbar {
-        overflow: hidden;
-        background-color: #333;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-    }
-
     /* Style the navigation bar links */
     .navbar a {
         float: left;
@@ -66,16 +57,9 @@
         text-decoration: none;
     }
 
-
     /* Right-aligned link */
     .navbar a.right {
         float: right;
-    }
-
-    /* Change color on hover */
-    .navbar a:hover {
-        background-color: #ddd;
-        color: black;
     }
 
     /* Active/current link */
@@ -114,13 +98,6 @@
         background-color: #aaa;
         width: 100%;
         padding: 20px;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 20px;
-        text-align: center;
-        background: #ddd;
     }
 
     /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -184,5 +161,32 @@
             </div>
         </div>
     </body>
+    <div name="site-footer">
+            <footer class="footer" style="background-color:gainsboro;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9">
+                            <form>
+                                <label for="email">Sign up to learn and get special offer </label>
+                                <input type="text" id="email" name="email" placeholder="E-mail" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                                </svg><br><br>
+                                <h5>Contact Us</h5><br>
+                                <p>Email: &emsp;&emsp; friendlyneighborhood@gmail.com</p>
+                                <p>Address: &emsp; Bangkok 10000, Thailand</p>
+                            </form>
+                        </div>
+                        <div class="col-3" style="text-align: center;">
+                            <br><br><br><br>
+                            <h5 style="color: black;"> Follow Us </h5>
+                            <img style="height: 30px; width: 30px;" src="./Image/facebook.png">
+                            <img style="height: 30px; width: 30px;" src="./Image/instagram.png">
+                            <img style="height: 30px; width: 30px;" src="./Image/twitter.png">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
 </body>
 </html>
