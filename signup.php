@@ -113,43 +113,45 @@
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
-            <label for="firstname"><b>Firstname</b></label>
-            <input type="text" placeholder="Enter Firstname" name="Firstname" required>
+            <form class="login100-form validate-form" action="signupcheck.php" method="POST" role="form">
+                <label for="firstname"><b>Firstname</b></label>
+                <input type="text" placeholder="Enter Firstname" name="Firstname" required>
 
-            <label for="lastname"><b>Lastname</b></label>
-            <input type="text" placeholder="Enter Lastname" name="lastname" required>
+                <label for="lastname"><b>Lastname</b></label>
+                <input type="text" placeholder="Enter Lastname" name="Lastname" required>
+                
+                <label for="gender"><b>Gender</b></label>
+                <br>
+                <input type="radio" name="gender" value="male" checked>Male
+                <input type="radio" name="gender" value="female">Female
+                <br><br>
+
+                <label for="usertype"><b>User Type</b></label>
+                <br>
+                <input type="radio" name="usertype" value="user" checked>Customer
+                <input type="radio" name="usertype" value="female">Staff
+                <br><br>
+
+                <label for="address"><b>Address</b></label>
+                <input type="text" placeholder="Enter Address" name="address" required>
+
+                <label for="phone"><b>Phone No.</b></label>
+                <input type="text" placeholder="Enter Phone No." name="phone" required>
             
-            <label for="gender"><b>Gender</b></label>
-            <br>
-            <input type="radio" name="gender" value="male" checked>Male
-            <input type="radio" name="gender" value="female">Female
-            <br><br>
-
-            <label for="usertype"><b>User Type</b></label>
-            <br>
-            <input type="radio" name="usertype" value="user" checked>Customer
-            <input type="radio" name="usertype" value="female">Staff
-            <br><br>
-
-            <label for="address"><b>Address</b></label>
-            <input type="text" placeholder="Enter Address" name="address" required>
-
-            <label for="phone no."><b>Phone No.</b></label>
-            <input type="text" placeholder="Enter Phone No." name="phone no." required>
-        
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-        
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        
-            <label for="psw-repeat"><b>Reenter Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
             
-            <div class="clearfix">
-                <button type="button" class="cancelbtn" href="home.php">Cancel</button>
-                <button type="submit" class="signupbtn">Sign Up</button>
-            </div>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <label for="psw-repeat"><b>Confirm Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn" onclick="history.back();">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </form>
         </div>
     </body>
 </body>
