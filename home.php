@@ -73,7 +73,7 @@
                         }
                         else {
                             echo '<a>'.$row[0]." ".$row[1].'</a>';
-                            echo '<a class="btn btn-primary mr-2 ml-3" href="userprofile.php">My Profile</a>';
+                            echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
                             echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
                         }
                         ?>
