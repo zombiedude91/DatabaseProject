@@ -117,7 +117,7 @@
     
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/buy.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Buy</h2>
+                        <h2 href="login.php">Buy</h2>
                         <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
                         We hope you will enjoy to buy the art on Arty.</p>
                     </div>
