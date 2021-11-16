@@ -115,28 +115,31 @@
                 </div>
                 <div class="row no-gutters">
     
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/buy.jpg');"></div>
-                    <a class="stretched-link" href="shopfilter.php" style="text-decoration:none; color:black;">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/.jpg');"></div>
+                    
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Buy</h2>
+                        <a class="stretched-link" href="checkup.php" style="text-decoration:none; color:black;">
+                        <h2>Check up / Setting</h2>
                         <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
-                        We hope you will enjoy to buy the art on Arty.</p>
-                    </div></a>
+                        We hope you will enjoy to buy the art on Arty.</p></a>
+                    </div>
                 </div>
                 <div class="row no-gutters">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/browse.jpg');">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/maintenance.jpg');">
                     </div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Browse</h2>
-                        <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p>
+                        <a class="stretched-link" href="maintenance.php" style="text-decoration:none; color:black;">
+                        <h2>Maintenance</h2>
+                        <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p></a>
                     </div>
                 </div>
                 <div class="row no-gutters">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/sell.jpg');"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/cleaning.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Sell</h2>
+                        <a class="stretched-link" href="cleanup.php" style="text-decoration:none; color:black;">
+                        <h2>Clean up</h2>
                         <p class="lead mb-0">Are you an artist? &nbsp; If yes, you can sell your art here. &nbsp;
-                        Arty will make many user from around the world to see and buy your art from you.</p>
+                        Arty will make many user from around the world to see and buy your art from you.</p></a>
                     </div>
                 </div>
             </div>
