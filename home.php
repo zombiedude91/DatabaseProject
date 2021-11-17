@@ -115,7 +115,7 @@
                 </div>
                 <div class="row no-gutters">
     
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/.jpg');"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/setting.jpg');"></div>
                     
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <a class="stretched-link" href="checkup.php" style="text-decoration:none; color:black;">
