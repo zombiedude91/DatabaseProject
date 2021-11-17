@@ -84,32 +84,33 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- User -->
+
                 <div class=" order-xl-1 col-md-12">
                     <div class="card bg-secondary shadow">
                         <div class="card-header bg-white border-0">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h3 class="mb-0" >User Profile</h3>
+                                    <h3 class="mb-0" >Edit Profile</h3>
                                 </div>
 
                             </div>
                         </div>
                         <div class="card-body">
                             <form class="validate-form" action="pcheck.php" method="POST">
-                                
+                                <h6 class="heading-small text-muted mb-4">Your Information</h6>
                                 <div class="pl-lg-4">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="input-first-name">First name</label>
-                                                <input <?php echo 'value=' . $row[4]; ?> name="fname" type="text" id="input-first-name" class="form-control form-control-alternative" readonly>
+                                                <input <?php echo 'value=' . $row[4]; ?> name="fname" type="text" id="input-first-name" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="input-last-name">Last name</label>
-                                                <input name="lname" <?php echo 'value=' . $row[5]; ?> type="text" id="input-last-name" class="form-control form-control-alternative" readonly>
+                                                <input name="lname" <?php echo 'value=' . $row[5]; ?> type="text" id="input-last-name" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +118,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group validate-input">
                                                 <label class="form-control-label" for="input-email">Gender</label>
-                                                <input <?php echo 'value=' . $row[6]; ?> name="email" type="email" id="input-email" class="form-control form-control-alternative" readonly>
+                                                <input <?php echo 'value=' . $row[6]; ?> name="email" type="email" id="input-email" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
                                         
@@ -126,13 +127,13 @@
                                         <div class="col-lg-6">
                                             <div class="form-group validate-input">
                                                 <label class="form-control-label" for="input-email">Email address</label>
-                                                <input <?php echo 'value=' . $row[1]; ?> name="email" type="email" id="input-email" class="form-control form-control-alternative" readonly>
+                                                <input <?php echo 'value=' . $row[1]; ?> name="email" type="email" id="input-email" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="input-last-name">Phone</label>
-                                                <input name="phone" <?php echo 'value=' . $row[8]; ?> type="number" id="phone" class="form-control form-control-alternative" readonly>
+                                                <input name="phone" <?php echo 'value=' . $row[8]; ?> type="number" id="phone" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
                                     </div>
@@ -145,17 +146,17 @@
                                         <div class="col-md-12">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="input-address">Address</label>
-                                                <textarea name="address" id="input-address" class="form-control form-control-alternative" type="text" readonly><?php echo $row[7]; ?></textarea>
+                                                <textarea name="address" id="input-address" class="form-control form-control-alternative" type="text" required><?php echo $row[7]; ?></textarea>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                                 <hr class="my-4">
                                 
                                 <div>
-                                    <a href="editprofile.php?id=<?php echo $_SESSION["uid"] ;?>" type="button" class="btn btn-default">Edit Profile</a>
-                                    <a href="editprofile.php?id=<?php echo $_SESSION["uid"] ;?>" type="button" class="btn btn-primary">Change Password</a>
-                                    <a href="editprofile.php?id=<?php echo $_SESSION["uid"] ;?>" type="button" class="btn btn-info">View Service History</a>
+                                    <a href="user-profile.php?id=<?php echo $_SESSION["uid"] ;?>" type="button" class="btn btn-default">Back</a>
+                                    <button type="submit" class="btn btn-success">Save</button>
                                 </div>
 
                             </form>
@@ -163,8 +164,6 @@
                     </div>
                 </div>
             </div>
-
+        </div>
     </div>
-
-
 </body>

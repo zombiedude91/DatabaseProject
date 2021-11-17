@@ -146,15 +146,15 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="main">
-                        <h2>TITLE HEADING</h2>
-                        <div class="fakeimg" style="height:200px;">Image</div>
-                        <p>Some text..</p>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        <h2>How to delay furniture decay</h2>
+                        <img src="img\uglycute4884_0.jpg" style="height:200px;">
+                        
+                        <p>Wipe down the furniture with a dry cloth to remove dust and loose debris and apply a gentle wood cleaner on wood surfaces and wipe with a damp cloth toLet the furniture sit in a well-ventilated area until it dries completely make sure no moisture remains trapped within the item as it may cause mold growth or discoloration over time.</p>
                         <br>
-                        <h2>TITLE HEADING</h2>
-                        <div class="fakeimg" style="height:200px;">Image</div>
-                        <p>Some text..</p>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        <h2>Reset your Air conditioner</h2>
+                        <img src="img\313.jpg" style="height:200px;">
+                        <p></p>
+                        <p>Sometimes air conditioner may stop working after opening. This may be cause by a timer which will warn you it’s time to clean the filter. Simply turn off the breaker to the air conditioner for 30s before turning back on. If this does no solve the problem then call for maintainace.</p>
                     </div>
                 </div>
                 <div class="col-md-2"></div>

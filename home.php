@@ -39,143 +39,205 @@
     </head>
 </head>
 <body>
-    <body data-new-gr-c-s-check-loaded="14.1036.0" data-gr-ext-installed="">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
+        <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <!--<li class="nav-item active">
+                    <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
+                </li>-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="tips.php">Tips</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="aboutus.php">About Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 mx-3">
+                <!--<form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->
+                <div class="float-right">
+                    <?php
+                    if ($_SESSION["login"] == "start") {
+                        echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
+                        echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
+                    }
+                    else {
+                        echo '<a>'.$row[0]." ".$row[1].'</a>';
+                        echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
+                        echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
+                    }
+                    ?>
+                </div>
+            </form>
+        </div>
+    </nav>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
-            <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <!--<li class="nav-item active">
-                        <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
-                    </li>-->
-                    <li class="nav-item active">
-                        <a class="nav-link" href="tips.php">Tips</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="aboutus.php">About Us</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0 mx-3">
-                    <!--<form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>-->
-                    <div class="float-right">
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Promotion</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form action="shopfilter.php" method="POST" role="form">
+                        <!--<div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <input name="search" class="form-control form-control-lg" placeholder="Search for art">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button type="submit" class="btn btn-block btn-lg btn-primary">Browse</button>
+                            </div>
+                        </div>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+
+
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <a class="stretched-link" href="
                         <?php
                         if ($_SESSION["login"] == "start") {
-                            echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
-                            echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
-                        }
-                        else {
-                            echo '<a>'.$row[0]." ".$row[1].'</a>';
-                            echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
-                            echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
+                            echo "login.php";
+                        } else {
+                            echo "addproduct.php";
                         }
                         ?>
-                    </div>
-                </form>
-            </div>
-        </nav>
 
-        <!-- Masthead -->
-        <header class="masthead text-white text-center">
-            <div class="overlay"></div>
+                        " style="text-decoration:none; color:black;">
+                            <div class="features-icons-icon d-flex">
+                                <i class="icon-screen-desktop m-auto text-primary"></i>
+                            </div>
+                            <h3>Sell</h3>
+                            <p class="lead mb-0">If you are an artist, sell your art here!</p>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <a class="stretched-link" href="shopfilter.php" style="text-decoration:none; color:black;">
+                            <div class="features-icons-icon d-flex">
+                                <i class="icon-layers m-auto text-primary"></i>
+                            </div>
+                            <h3>Browse</h3>
+                            <p class="lead mb-0">Many artists have exhibited their art, see it here!</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <a class="stretched-link" href="
+                        <?php
+                        if ($_SESSION["login"] == "start") {
+                            echo "login.php";
+                        } else {
+                            echo "shopfilter.php";
+                        }
+                        ?>
+                        
+                        
+                        " style="text-decoration:none; color:black;">
+                            <div class="features-icons-icon d-flex">
+                                <i class="icon-check m-auto text-primary"></i>
+                            </div>
+                            <h3>Buy</h3>
+                            <p class="lead mb-0">If you want to buy some art, buy it here!</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-5">
+            <div class="py-5" style="text-align: center;">
+                <!--font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;-->
+                <h1 style="text-align: center;">Service Categories</h1>
+            </div>
+            <div class="row no-gutters">
+
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/setting.jpg');"></div>
+                
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <a class="stretched-link" href="checkup.php" style="text-decoration:none; color:black;">
+                    <h2>Check up / Setting</h2>
+                    <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
+                    We hope you will enjoy to buy the art on Arty.</p></a>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/maintenance.jpg');">
+                </div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <a class="stretched-link" href="maintenance.php" style="text-decoration:none; color:black;">
+                    <h2>Maintenance</h2>
+                    <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p></a>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/cleaning.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <a class="stretched-link" href="cleanup.php" style="text-decoration:none; color:black;">
+                    <h2>Clean up</h2>
+                    <p class="lead mb-0">Are you an artist? &nbsp; If yes, you can sell your art here. &nbsp;
+                    Arty will make many user from around the world to see and buy your art from you.</p></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div name="site-footer">
+        <footer class="footer" style="background-color:gainsboro;">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-9 mx-auto">
-                        <h1 class="mb-5">Promotion</h1>
-                    </div>
-                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                        <form action="shopfilter.php" method="POST" role="form">
-                            <!--<div class="form-row">
-                                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                    <input name="search" class="form-control form-control-lg" placeholder="Search for art">
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <button type="submit" class="btn btn-block btn-lg btn-primary">Browse</button>
-                                </div>
-                            </div>-->
+                    <div class="col-9">
+                        <form>
+                            <label for="email">Sign up to learn and get special offer </label>
+                            <input type="text" id="email" name="email" placeholder="E-mail" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                            </svg><br><br>
+                            <h5>Contact Us</h5><br>
+                            <p>Email: &emsp;&emsp; friendlyneighborhood@gmail.com</p>
+                            <p>Address: &emsp; Bangkok 10000, Thailand</p>
                         </form>
                     </div>
-                </div>
-            </div>
-        </header>
-    
-        <!-- Image Showcases -->
-        <section class="showcase">
-            <div class="container-fluid p-5">
-                <div class="py-5" style="text-align: center;">
-                    <!--font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;-->
-                    <h1 style="text-align: center;">Service Categories</h1>
-                </div>
-                <div class="row no-gutters">
-    
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/setting.jpg');"></div>
-                    
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <a class="stretched-link" href="checkup.php" style="text-decoration:none; color:black;">
-                        <h2>Check up / Setting</h2>
-                        <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
-                        We hope you will enjoy to buy the art on Arty.</p></a>
-                    </div>
-                </div>
-                <div class="row no-gutters">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/maintenance.jpg');">
-                    </div>
-                    <div class="col-lg-6 my-auto showcase-text">
-                        <a class="stretched-link" href="maintenance.php" style="text-decoration:none; color:black;">
-                        <h2>Maintenance</h2>
-                        <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p></a>
-                    </div>
-                </div>
-                <div class="row no-gutters">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/cleaning.jpg');"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <a class="stretched-link" href="cleanup.php" style="text-decoration:none; color:black;">
-                        <h2>Clean up</h2>
-                        <p class="lead mb-0">Are you an artist? &nbsp; If yes, you can sell your art here. &nbsp;
-                        Arty will make many user from around the world to see and buy your art from you.</p></a>
+                    <div class="col-3" style="text-align: center;">
+                        <br><br><br><br>
+                        <h5 style="color: black;"> Follow Us </h5>
+                        <img style="height: 30px; width: 30px;" src="./Image/facebook.png">
+                        <img style="height: 30px; width: 30px;" src="./Image/instagram.png">
+                        <img style="height: 30px; width: 30px;" src="./Image/twitter.png">
                     </div>
                 </div>
             </div>
-        </section>
-        <div name="site-footer">
-            <footer class="footer" style="background-color:gainsboro;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-9">
-                            <form>
-                                <label for="email">Sign up to learn and get special offer </label>
-                                <input type="text" id="email" name="email" placeholder="E-mail" />
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-                                </svg><br><br>
-                                <h5>Contact Us</h5><br>
-                                <p>Email: &emsp;&emsp; friendlyneighborhood@gmail.com</p>
-                                <p>Address: &emsp; Bangkok 10000, Thailand</p>
-                            </form>
-                        </div>
-                        <div class="col-3" style="text-align: center;">
-                            <br><br><br><br>
-                            <h5 style="color: black;"> Follow Us </h5>
-                            <img style="height: 30px; width: 30px;" src="./Image/facebook.png">
-                            <img style="height: 30px; width: 30px;" src="./Image/instagram.png">
-                            <img style="height: 30px; width: 30px;" src="./Image/twitter.png">
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+        </footer>
+    </div>
     
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    </body>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     
 </body>
 </html>
