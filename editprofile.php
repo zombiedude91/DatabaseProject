@@ -117,8 +117,9 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group validate-input">
-                                                <label class="form-control-label" for="input-email">Gender</label>
-                                                <input <?php echo 'value=' . $row[6]; ?> name="email" type="email" id="input-email" class="form-control form-control-alternative" required>
+                                                <label class="form-control-label" for="input-email">Gender:</label> &emsp;
+                                                <input type="radio" name="gender" value="Male" <?php echo ($row[6] == "Male" ? 'checked="checked"': ''); ?>> Male </label> &ensp;
+                                                <input type="radio" name="gender" value="Female" <?php echo ($row[6] == "Female" ? 'checked="checked"': ''); ?>> Female </label>
                                             </div>
                                         </div>
                                         
