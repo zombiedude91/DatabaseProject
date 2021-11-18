@@ -14,9 +14,9 @@ require_once('connect.php');
         $_SESSION["login"] = "start";
     }
 
-    $id = $_SESSION['uid'];
+    $uid = $_SESSION['uid'];
 
-    $q = "SELECT FirstName, LastName FROM user WHERE UserID = '$id'";
+    $q = "SELECT FirstName, LastName FROM user WHERE UserID = '$uid'";
     $row = mysqli_fetch_row($mysqli->query($q));
     $mysqli->close();
 ?>
@@ -98,13 +98,13 @@ require_once('connect.php');
           <br>
           <?php
 
-          $mysqli = new mysqli('localhost', 'root', '', 'ARTY');
+          $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
 
           if ($mysqli->connect_errno) {
             echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
           }
 
-          $q = "SELECT CategoryID, CategoryName FROM category";
+          $q = "SELECT ServiceID, ServiceName FROM service";
 
 
           $row = mysqli_fetch_all($mysqli->query($q));
@@ -116,7 +116,7 @@ require_once('connect.php');
 
 
           foreach ($row as $i) {
-            echo '<a href="shopfilter.php?id=' . $i[0] . '" class="list-group-item">' . $i[1] . '</a>';
+            echo '<a href="service.php?id=' . $i[0] . '" class="list-group-item">' . $i[1] . '</a>';
           }
           ?>
 
@@ -127,21 +127,40 @@ require_once('connect.php');
       <div class="col-lg-9">
 
         <div class="card mt-4">
+
+          <?php
+            $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+
+            if ($mysqli->connect_errno) {
+              echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+            }
+
+            $q = "SELECT * FROM service WHERE ServiceID = " . $_GET["id"];
+            $row = mysqli_fetch_all($mysqli->query($q));
+            $mysqli->close();
+          ?>
+
           <img class="card-img-top img-fluid" src=".\img\Air-Conditioning.jpg" alt="">
 
-          <div class="card-body">
-
-            <h3 class="card-title col-md"><?php echo "Air Conditioner" ?></h3>
-
-            <h4 class="card-title col-md"><?php echo "2500 Baht" ?></h4>
-            <p class="card-text col-md"><?php echo "Air" ?></p>
+          <div class="row">
+            
+            <div class="card-body col-9">
+              <h3 class="card-title col-md"><?php echo $row[0][2]; ?></h3>
+              <p class="card-text col-md"><?php echo $row[0][3]; ?></p>
+            </div>
+            
+            <div class="card-body col-3">
+              <h4 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h4>
+              <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
+            </div>
+            
           </div>
         </div>
         <!-- /.card -->
 
         <div class="card card-outline-secondary my-4">
           <div class="card-header">
-            Product Reviews
+            Service Reviews
           </div>
           <div class="card-body">
 
