@@ -29,7 +29,7 @@ require_once('connect.php');
         <meta name="description" content="">
         <meta name="author" content="">
     
-        <title>Friendly-Neighborhood</title>
+        <title>Service</title>
     
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -151,7 +151,9 @@ require_once('connect.php');
             
             <div class="card-body col-3">
               <h4 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h4>
-              <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
+              <form action="review.php?id=<?php echo $row[0][0] ?>" method="POST">
+                <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
+              </form>
             </div>
             
           </div>
