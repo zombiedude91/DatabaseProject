@@ -122,14 +122,14 @@
                 
                 <label for="gender"><b>Gender</b></label>
                 <br>
-                <input type="radio" name="gender" value="male" checked>Male
-                <input type="radio" name="gender" value="female">Female
+                <input type="radio" name="gender" value="Male" checked>Male
+                <input type="radio" name="gender" value="Female">Female
                 <br><br>
 
                 <label for="usertype"><b>User Type</b></label>
                 <br>
                 <input type="radio" name="usertype" value="user" checked>Customer
-                <input type="radio" name="usertype" value="female">Staff
+                <input type="radio" name="usertype" value="staff">Staff
                 <br><br>
 
                 <label for="address"><b>Address</b></label>
