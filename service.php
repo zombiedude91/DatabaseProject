@@ -105,15 +105,8 @@ require_once('connect.php');
           }
 
           $q = "SELECT ServiceID, ServiceName FROM service";
-
-
           $row = mysqli_fetch_all($mysqli->query($q));
-
-
-          //var_dump($row);
-
           $mysqli->close();
-
 
           foreach ($row as $i) {
             echo '<a href="service.php?id=' . $i[0] . '" class="list-group-item">' . $i[1] . '</a>';
@@ -151,9 +144,32 @@ require_once('connect.php');
             
             <div class="card-body col-3">
               <h4 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h4>
-              <form action="addtocart.php?id=<?php echo $row[0][0] ?>" method="POST">
+              
+              <?php
+
+                $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+
+                if ($mysqli->connect_errno) {
+                  echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+                }
+
+                $q = "SELECT * FROM cart WHERE UserID = '$uid' AND ServiceID = ". $_GET["id"];
+                $row = mysqli_fetch_all($mysqli->query($q));
+                $mysqli->close();
+
+                if (!isset($row[0][2])) {
+              ?>
+
+              <form action="addtocart.php?id=<?php echo $_GET["id"] ?>" method="POST">
                 <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
               </form>
+
+              <?php } else { ?>
+              
+              <a style="color:red; text-align:center;"><span> You have already choose this service </span></a>
+
+              <?php } ?>
+              
             </div>
             
           </div>
