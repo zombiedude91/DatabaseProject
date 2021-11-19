@@ -89,22 +89,40 @@ require_once('connect.php');
 				<div style="clear:both"></div>
 				<br />
 				<h3>Order Details</h3>
+
 				<div class="table-responsive">
 					<table class="table table-bordered">
 						<tr>
 							<th width="40%">Item Name</th>
 							<th width="20%">Price</th>
-							<th width="15%">Total</th>
 							<th width="5%">Action</th>
 						</tr>
+
+						<?php
+							$mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+
+							if ($mysqli->connect_errno) {
+							echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+							}
+
+							$q = "SELECT * FROM cart c, service s WHERE c.ServiceID = s.ServiceID AND c.UserID = '$uid'";
+							$row = mysqli_fetch_all($mysqli->query($q));
+							$mysqli->close();
+
+							foreach ($row as $i) {
+						?>
+
 						<tr>
-							<td><?php echo "item_name"; ?></td>
-							<td>$ <?php echo "item_price"; ?></td>
-							<td>$ <?php echo "item_price";?></td>
+							<td><?php echo $i[5]; ?></td>
+							<td><?php echo $i[7]; ?> THB</td>
 							<td><a href="shoppingcart.php"><span class="text-danger">Remove</span></a></td>
-						</tr>						
+						</tr>
+						
+						<?php } ?>
+						
 					</table>
 				</div>
+
 			</div>
 		</div>
 		<br /><br /><br /><br /><br /><br />
