@@ -151,7 +151,7 @@ require_once('connect.php');
             
             <div class="card-body col-3">
               <h4 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h4>
-              <form action="review.php?id=<?php echo $row[0][0] ?>" method="POST">
+              <form action="addtocart.php?id=<?php echo $row[0][0] ?>" method="POST">
                 <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
               </form>
             </div>
