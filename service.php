@@ -166,7 +166,7 @@ require_once('connect.php');
 
               <?php } else { ?>
               
-              <a style="color:red; text-align:center;"><span> You have already choose this service </span></a>
+              <a style="color:red; text-align:center;"><span> You have already chosen this service </span></a>
 
               <?php } ?>
               
