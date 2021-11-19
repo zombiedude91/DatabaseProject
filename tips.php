@@ -141,12 +141,14 @@
                 
             </div>
         </nav>
-        <div class="container-fluid">
+        <div class="container-fluid p-5">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="main">
-                        <h2>How to delay furniture decay</h2>
+                <div class="col-md-12">
+                    <div class="card">
+                        <h2 class="py-3" style="text-align:center; background: #e3f2fd;">Tips</h2>
+                        <div class="row py-3">   
+                            <div class="container">
+                            <h2>How to delay furniture decay</h2>
                         <img src="img\uglycute4884_0.jpg" style="height:200px;">
                         
                         <p>Wipe down the furniture with a dry cloth to remove dust and loose debris and apply a gentle wood cleaner on wood surfaces and wipe with a damp cloth toLet the furniture sit in a well-ventilated area until it dries completely make sure no moisture remains trapped within the item as it may cause mold growth or discoloration over time.</p>
@@ -155,12 +157,15 @@
                         <img src="img\313.jpg" style="height:200px;">
                         <p></p>
                         <p>Sometimes air conditioner may stop working after opening. This may be cause by a timer which will warn you it’s time to clean the filter. Simply turn off the breaker to the air conditioner for 30s before turning back on. If this does no solve the problem then call for maintainace.</p>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
             </div>
         </div>
-    </body>
+
     <div name="site-footer">
             <footer class="footer" style="background-color:gainsboro;">
                 <div class="container">

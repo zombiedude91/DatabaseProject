@@ -52,6 +52,9 @@
                     <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
                 </li>-->
                 <li class="nav-item active">
+                    <a class="nav-link" href="service.php?id=1">Service</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="tips.php">Tips</a>
                 </li>
                 <li class="nav-item active">
@@ -108,24 +111,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-
-
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <a class="stretched-link" href="
-                        <?php
-                        if ($_SESSION["login"] == "start") {
-                            echo "login.php";
-                        } else {
-                            echo "addproduct.php";
-                        }
-                        ?>
-
-                        " style="text-decoration:none; color:black;">
+                        <a class="stretched-link" href="service.php?id=1" style="text-decoration:none; color:black;">
                             <div class="features-icons-icon d-flex">
                                 <i class="icon-screen-desktop m-auto text-primary"></i>
                             </div>
-                            <h3>Sell</h3>
-                            <p class="lead mb-0">If you are an artist, sell your art here!</p>
+                            <h3>Service</h3>
+                            <p class="lead mb-0">If you want to find some service, search here!</p>
                         </a>
                     </div>
 
@@ -134,33 +126,23 @@
 
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <a class="stretched-link" href="shopfilter.php" style="text-decoration:none; color:black;">
+                        <a class="stretched-link" href="tips.php" style="text-decoration:none; color:black;">
                             <div class="features-icons-icon d-flex">
                                 <i class="icon-layers m-auto text-primary"></i>
                             </div>
-                            <h3>Browse</h3>
-                            <p class="lead mb-0">Many artists have exhibited their art, see it here!</p>
+                            <h3>Tips</h3>
+                            <p class="lead mb-0">Many tips to maintenance your room, see it here!</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                        <a class="stretched-link" href="
-                        <?php
-                        if ($_SESSION["login"] == "start") {
-                            echo "login.php";
-                        } else {
-                            echo "shopfilter.php";
-                        }
-                        ?>
-                        
-                        
-                        " style="text-decoration:none; color:black;">
+                        <a class="stretched-link" href="aboutus.php" style="text-decoration:none; color:black;">
                             <div class="features-icons-icon d-flex">
                                 <i class="icon-check m-auto text-primary"></i>
                             </div>
-                            <h3>Buy</h3>
-                            <p class="lead mb-0">If you want to buy some art, buy it here!</p>
+                            <h3>About Us</h3>
+                            <p class="lead mb-0">See more about us, click here!</p>
                         </a>
                     </div>
                 </div>
@@ -180,7 +162,7 @@
                 <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/setting.jpg');"></div>
                 
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <a class="stretched-link" href="checkup.php" style="text-decoration:none; color:black;">
+                    <a class="stretched-link" style="text-decoration:none; color:black;">
                     <h2>Check up / Setting</h2>
                     <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
                     We hope you will enjoy to buy the art on Arty.</p></a>
@@ -190,7 +172,7 @@
                 <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/maintenance.jpg');">
                 </div>
                 <div class="col-lg-6 my-auto showcase-text">
-                    <a class="stretched-link" href="maintenance.php" style="text-decoration:none; color:black;">
+                    <a class="stretched-link" style="text-decoration:none; color:black;">
                     <h2>Maintenance</h2>
                     <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p></a>
                 </div>
@@ -198,7 +180,7 @@
             <div class="row no-gutters">
                 <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/cleaning.jpg');"></div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <a class="stretched-link" href="cleanup.php" style="text-decoration:none; color:black;">
+                    <a class="stretched-link" style="text-decoration:none; color:black;">
                     <h2>Clean up</h2>
                     <p class="lead mb-0">Are you an artist? &nbsp; If yes, you can sell your art here. &nbsp;
                     Arty will make many user from around the world to see and buy your art from you.</p></a>
