@@ -143,36 +143,50 @@ require_once('connect.php');
             </div>
             
             <div class="card-body col-3">
-              <h4 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h4>
-              
-              <?php
-
-                $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
-
-                if ($mysqli->connect_errno) {
-                  echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
-                }
-
-                $q = "SELECT * FROM cart WHERE UserID = '$uid' AND ServiceID = ". $_GET["id"];
-                $row = mysqli_fetch_all($mysqli->query($q));
-                $mysqli->close();
-
-                if (!isset($row[0][2])) {
-              ?>
-
-              <form action="addtocart.php?id=<?php echo $_GET["id"] ?>" method="POST">
-                <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
-              </form>
-
-              <?php } else { ?>
-              
-              <a style="color:red; text-align:center;"><span> You have already chosen this service </span></a>
-
-              <?php } ?>
-              
+              <h4 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h4>              
             </div>
             
           </div>
+            
+          <?php
+
+            $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+
+            if ($mysqli->connect_errno) {
+              echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+            }
+
+            $q = "SELECT * FROM cart WHERE UserID = '$uid' AND ServiceID = ". $_GET["id"];
+            $row = mysqli_fetch_all($mysqli->query($q));
+            $mysqli->close();
+
+            if (!isset($row[0][2])) {
+          ?>
+
+          <form action="addtocart.php?id=<?php echo $_GET["id"] ?>" method="POST">
+            <div class="row">
+              <div class="card-body col-9">
+                <label for="date" class="ml-3" style="font-weight:bold;">Date:</label>&ensp;
+                <input type="date" id="date" name="date" required>
+
+                <label for="time" class="ml-3" style="font-weight:bold;">Time:</label>&ensp;
+                <input type="time" id="time" name="time" min="09:00" max="18:00" required>
+              </div>
+              
+              <div class="card-body col-3">
+                <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
+              </div>
+            </div>
+          </form>
+
+          <?php } else { ?>
+          
+          <div class="card-body" style="text-align:center;">
+            <a style="color:red;"><span> You have already chosen this service </span></a>
+          </div>
+
+          <?php } ?>
+
         </div>
         <!-- /.card -->
 

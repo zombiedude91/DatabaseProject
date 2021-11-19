@@ -95,6 +95,8 @@ require_once('connect.php');
 						<tr>
 							<th width="40%">Item Name</th>
 							<th width="20%">Price</th>
+							<th width="10%">Date</th>
+							<th width="10%">Time</th>
 							<th width="5%">Action</th>
 						</tr>
 
@@ -113,12 +115,14 @@ require_once('connect.php');
 
 							foreach ($row as $i) {
 
-							$total += $i[7];
+							$total += $i[9];
 						?>
 
 						<tr>
-							<td><?php echo $i[5]; ?></td>
-							<td><?php echo $i[7]; ?> THB</td>
+							<td><?php echo $i[7]; ?></td>
+							<td><?php echo $i[9]; ?> THB</td>
+							<td><?php echo date("d/m/Y", strtotime($i[3])); ?></td>
+							<td><?php echo date("h.i a", strtotime($i[4])); ?></td>
 							<td>
 								<form action="removecart.php?id=<?php echo $i[0] ?>" method="POST">
                 					<input type="submit" class="btn btn-danger" style="text-align:center;" value="Remove">
@@ -131,12 +135,38 @@ require_once('connect.php');
 						<tr>
 							<td><h3 style="text-align:right;">Total</h3></td>
 							<td><h3 style="text-align:left;"><?php echo $total; ?> THB</h3></td>
-							<td></td>
 						</tr>
 						
 					</table>
 
 				</div>
+
+				<form class="login100-form validate-form" action="confirmcart.php" method="post">
+					<div class="row">
+						<div class="col-8">
+							<label for="payment"><h6>Choose Payment Method:</h6></label>&emsp;
+
+							<?php 
+								$mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+
+								if ($mysqli->connect_errno) {
+									echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+								}
+
+								$q = "SELECT * FROM Payment";
+								$row = mysqli_fetch_all($mysqli->query($q));
+								$mysqli->close();
+								foreach ($row as $i) {
+									echo '<input type="radio" name="payment" value="'.$i[0].'" checked>'.$i[1].'&emsp;';
+								}
+							?>
+						</div>
+
+						<div class="col-4" style="text-align:right;">
+							<button type="submit" class="btn btn-success">Confirm</button>
+						</div>
+					</div>
+				</form>
 
 			</div>
 		</div>

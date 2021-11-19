@@ -9,9 +9,11 @@ if ($mysqli->connect_errno) {
 
 $uid = $_SESSION['uid'];
 $id = $_GET["id"];
+$date = $_POST['date'];
+$time = $_POST['time'];
 
 
-$q = "INSERT INTO cart (UserID,ServiceID) VALUES ('$uid','$id');";
+$q = "INSERT INTO cart (UserID,ServiceID,Date,Time) VALUES ('$uid','$id','$date','$time');";
 
 echo $q;
 
