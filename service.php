@@ -87,7 +87,7 @@ require_once('connect.php');
             </form>
         </div>
     </nav>
-
+    <a class="btn btn-primary mr-2 ml-3" href="addservice.php" style="float: right;" >Add service</a>
   <!-- Page Content -->
   <div class="container">
 
