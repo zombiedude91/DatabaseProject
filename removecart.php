@@ -20,6 +20,6 @@ if (!$mysqli->query($q)) {
 }
 
 //redirect
-header("Location: shoppingcart.php?id=$id");
+header("Location: shoppingcart.php");
 
 ?>
