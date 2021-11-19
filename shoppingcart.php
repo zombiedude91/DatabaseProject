@@ -127,18 +127,15 @@ require_once('connect.php');
 						</tr>
 						
 						<?php } ?>
+
+						<tr>
+							<td><h3 style="text-align:right;">Total</h3></td>
+							<td><h3 style="text-align:left;"><?php echo $total; ?> THB</h3></td>
+							<td></td>
+						</tr>
 						
 					</table>
 
-				</div>
-
-				<div class="row">
-					<div class="col-7">
-						<h3 style="text-align:right;">Total:</h3>
-					</div>
-					<div class="col-5">
-						<h3 style="text-align:left;"><?php echo $total; ?> THB</h3>
-					</div>
 				</div>
 
 			</div>
