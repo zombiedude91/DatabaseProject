@@ -112,15 +112,15 @@
         <div class="container">
             
             <hr>
-            <form class="login100-form validate-form" action="signupcheck.php" method="POST" role="form">
+            <form class="login100-form validate-form" action="updatepass.php" method="POST" role="form">
                 <label for="psw"><b>Current password</b></label>
-                <input type="password" placeholder="Enter Current password" name="psw" required>
+                <input type="password" placeholder="Enter Current password" name="oldpsw" required>
             
                 <label for="psw"><b>New password</b></label>
-                <input type="password" placeholder="Enter new password" name="psw" required>
+                <input type="password" placeholder="Enter new password" name="newpsw" required>
             
                 <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                <input type="password" placeholder="Repeat Password" name="newpsw-repeat" required>
 
                 <div class="clearfix">
                     <button type="button" class="cancelbtn" onclick="history.back();">Cancel</button>

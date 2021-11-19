@@ -153,9 +153,9 @@
                                 <hr class="my-4">
                                 
                                 <div>
-                                    <a href="editprofile.php?id=<?php echo $_SESSION["uid"] ;?>" type="button" class="btn btn-default">Edit Profile</a>
-                                    <a href="editprofile.php?id=<?php echo $_SESSION["uid"] ;?>" type="button" class="btn btn-primary">Change Password</a>
-                                    <a href="editprofile.php?id=<?php echo $_SESSION["uid"] ;?>" type="button" class="btn btn-info">View Service History</a>
+                                    <a href="editprofile.php" type="button" class="btn btn-default">Edit Profile</a>
+                                    <a href="changepassword.php" type="button" class="btn btn-primary">Change Password</a>
+                                    <a href="history.php" type="button" class="btn btn-info">View Service History</a>
                                 </div>
 
                             </form>
