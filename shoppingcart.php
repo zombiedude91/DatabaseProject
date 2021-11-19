@@ -109,18 +109,36 @@ require_once('connect.php');
 							$row = mysqli_fetch_all($mysqli->query($q));
 							$mysqli->close();
 
+							$total = 0;
+
 							foreach ($row as $i) {
+
+							$total += $i[7];
 						?>
 
 						<tr>
 							<td><?php echo $i[5]; ?></td>
 							<td><?php echo $i[7]; ?> THB</td>
-							<td><a href="shoppingcart.php"><span class="text-danger">Remove</span></a></td>
+							<td>
+								<form action="removecart.php?id=<?php echo $i[0] ?>" method="POST">
+                					<input type="submit" class="btn btn-danger" style="text-align:center;" value="Remove">
+              					</form>
+							</td>
 						</tr>
 						
 						<?php } ?>
 						
 					</table>
+
+				</div>
+
+				<div class="row">
+					<div class="col-7">
+						<h3 style="text-align:right;">Total:</h3>
+					</div>
+					<div class="col-5">
+						<h3 style="text-align:left;"><?php echo $total; ?> THB</h3>
+					</div>
 				</div>
 
 			</div>
