@@ -7,8 +7,11 @@ if ($mysqli->connect_errno) {
     echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
 }
 
-$q = "INSERT INTO user (Email,Password,UserType,FirstName,LastName,Gender,Address,PhoneNo) 
-VALUES ('$email','$passwd','$usertype','$fname','$lname','$gender','$address','$phone');";
+$uid = $_SESSION['uid'];
+$id = $_GET["id"];
+
+
+$q = "INSERT INTO cart (UserID,ServiceID) VALUES ('$uid','$id');";
 
 echo $q;
 
@@ -17,6 +20,6 @@ if (!$mysqli->query($q)) {
 }
 
 //redirect
-header("Location: home.php");
+header("Location: service.php?id=$id");
 
 ?>
