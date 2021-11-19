@@ -85,7 +85,7 @@ require_once('connect.php');
 
 		<br />
 		<div class="container pb-5">
-			<h1 style=>Service</h1>
+			<h1 style=>Service Cart</h1>
 				<div style="clear:both"></div>
 				<br />
 				<h3>Order Details</h3>
@@ -93,11 +93,11 @@ require_once('connect.php');
 				<div class="table-responsive">
 					<table class="table table-bordered">
 						<tr>
-							<th width="40%">Item Name</th>
-							<th width="20%">Price</th>
-							<th width="10%">Date</th>
-							<th width="10%">Time</th>
-							<th width="5%">Action</th>
+							<th width="40%" style="text-align:center;">Item Name</th>
+							<th width="20%" style="text-align:center;">Price</th>
+							<th width="10%" style="text-align:center;">Date</th>
+							<th width="10%" style="text-align:center;">Time</th>
+							<th width="5%" style="text-align:center;">Action</th>
 						</tr>
 
 						<?php
@@ -120,10 +120,10 @@ require_once('connect.php');
 
 						<tr>
 							<td><?php echo $i[7]; ?></td>
-							<td><?php echo $i[9]; ?> THB</td>
-							<td><?php echo date("d/m/Y", strtotime($i[3])); ?></td>
-							<td><?php echo date("h.i a", strtotime($i[4])); ?></td>
-							<td>
+							<td style="text-align:center;"><?php echo $i[9]; ?> THB</td>
+							<td style="text-align:center;"><?php echo date("d/m/Y", strtotime($i[3])); ?></td>
+							<td style="text-align:center;"><?php echo date("h.i a", strtotime($i[4])); ?></td>
+							<td style="text-align:center;">
 								<form action="removecart.php?id=<?php echo $i[0] ?>" method="POST">
                 					<input type="submit" class="btn btn-danger" style="text-align:center;" value="Remove">
               					</form>
@@ -134,7 +134,7 @@ require_once('connect.php');
 
 						<tr>
 							<td><h3 style="text-align:right;">Total</h3></td>
-							<td><h3 style="text-align:left;"><?php echo $total; ?> THB</h3></td>
+							<td><h3 style="text-align:center;"><?php echo $total; ?> THB</h3></td>
 						</tr>
 						
 					</table>
