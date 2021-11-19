@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form class="validate-form" action="updateprofile.php" method="POST">
+                            <form class="validate-form" action="updatepass.php" method="POST">
                                 <h6 class="heading-small text-muted mb-4"></h6>
                                 <div class="pl-lg-4">
                                     <div class="row">
