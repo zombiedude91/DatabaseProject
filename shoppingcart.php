@@ -107,7 +107,7 @@ require_once('connect.php');
 							echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
 							}
 
-							$q = "SELECT * FROM cart c, service s WHERE c.ServiceID = s.ServiceID AND c.UserID = '$uid'";
+							$q = "SELECT * FROM cart c INNER JOIN service s ON c.ServiceID = s.ServiceID WHERE c.UserID = '$uid'";
 							$row = mysqli_fetch_all($mysqli->query($q));
 							$mysqli->close();
 
