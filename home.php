@@ -164,8 +164,7 @@
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <a class="stretched-link" style="text-decoration:none; color:black;">
                     <h2>Check up / Setting</h2>
-                    <p class="lead mb-0">We will help you to find the art you like and buy it easily. &nbsp;
-                    We hope you will enjoy to buy the art on Arty.</p></a>
+                    <p class="lead mb-0">Having problem setting up a new appliance? &nbsp; We can come and help you set up for your home.</p></a>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -174,7 +173,7 @@
                 <div class="col-lg-6 my-auto showcase-text">
                     <a class="stretched-link" style="text-decoration:none; color:black;">
                     <h2>Maintenance</h2>
-                    <p class="lead mb-0">Many arts are delivered on Arty.&nbsp; You can browse our site to see the art from many artists around the world. </p></a>
+                    <p class="lead mb-0">Regular maintenance will no longer be a hassle. &nbsp; Our specialist can take care of it or you. </p></a>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -182,8 +181,7 @@
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <a class="stretched-link" style="text-decoration:none; color:black;">
                     <h2>Clean up</h2>
-                    <p class="lead mb-0">Are you an artist? &nbsp; If yes, you can sell your art here. &nbsp;
-                    Arty will make many user from around the world to see and buy your art from you.</p></a>
+                    <p class="lead mb-0">If cleaning up is a trouble, why not let someone else do it? &nbsp; We can provide clean up service at your home.</p></a>
                 </div>
             </div>
         </div>
