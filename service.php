@@ -48,8 +48,6 @@ require_once('connect.php');
     
         <!-- Custom styles for this template -->
         <link href="css/landing-page.min.css" rel="stylesheet">
-        <link href="css/shop-item.css" rel="stylesheet">
-        <link href="mycss.css" rel="stylesheet">
     
     </head>
 </head>
@@ -234,7 +232,7 @@ require_once('connect.php');
 
               foreach ($getreview as $r) {
                 echo '<p>' . $r[4] . '</p>';
-                echo '<small class="text-muted">Posted by ' . $r[9] . '</small>';
+                echo '<small class="text-muted">Posted by ' . $r[9] . ' ' . $r[10] . '</small> &nbsp;';
   
                 echo '<span class="text-warning">   ';
   
@@ -250,35 +248,36 @@ require_once('connect.php');
                 echo '<hr>';
               }
 
-              if (isset($_SESSION["uid"])) {
-                echo '
-                <form action="review.php?id=' . $_GET["id"] . '" method="POST">
+              $rating = NULL;
+              $comment = NULL;
+
+              if (isset($getreview[0][1]) && $getreview[0][1] == $_SESSION["uid"]) {
+                $rating = $getreview[0][3];
+                $comment = $getreview[0][4];
+              }
+
+              if (isset($_SESSION["uid"])) { ?>
+                <form action="review.php?id=<?php echo $_GET["id"] ?>" method="POST">
                   <div class="row">
 
                     <div class="col-3">
                       <fieldset class="rating">
                         <label for="rating"><b>Rating:</b></label><br>
-                        <input type="radio" id="star5" name="rating" value="5" />
-                        <label for="star5">5 &nbsp;</label>
-                        <input type="radio" id="star4" name="rating" value="4" />
-                        <label for="star4">4 &nbsp;</label>
-                        <input type="radio" id="star3" name="rating" value="3" />
-                        <label for="star3">3 &nbsp;</label>
-                        <input type="radio" id="star2" name="rating" value="2" />
-                        <label for="star2">2 &nbsp;</label>
-                        <input type="radio" id="star1" name="rating" value="1" />
-                        <label for="star1">1 &nbsp;</label>
+                        <input type="radio" id="star5" name="rating" value="5" <?php if ($rating==5) {echo "checked";} ?> /> 5 &nbsp;
+                        <input type="radio" id="star4" name="rating" value="4" <?php if ($rating==4) {echo "checked";} ?> /> 4 &nbsp;
+                        <input type="radio" id="star3" name="rating" value="3" <?php if ($rating==3) {echo "checked";} ?> /> 3 &nbsp;
+                        <input type="radio" id="star2" name="rating" value="2" <?php if ($rating==2) {echo "checked";} ?> /> 2 &nbsp;
+                        <input type="radio" id="star1" name="rating" value="1" <?php if ($rating==1) {echo "checked";} ?> /> 1 &nbsp;
                       </fieldset>
-
                     </div>
-                    <textarea class="col" id="review" name="review" placeholder="leave a review"></textarea>
 
+                    <textarea class="col" id="review" name="review" placeholder="leave a review"><?php 
+                      if (isset($comment)) {echo $comment;} ?></textarea>
                     <input type="submit" class="btn btn-success col-3" value="Submit">
-                  </div>
-                </form>';
-              }
 
-            ?>
+                  </div>
+                </form>
+              <?php } ?>
 
           </div>
         </div>
