@@ -39,19 +39,6 @@
     
     </head>
     <style>
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            display: inline-block;
-            border: none;
-            background: #f1f1f1;
-        }
-        
-        input[type=text]:focus, input[type=password]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
         
         hr {
             border: 1px solid #f1f1f1;
@@ -70,10 +57,6 @@
             opacity: 0.9;
         }
         
-        button:hover {
-            opacity:1;
-        }
-        
         /* Extra styles for the cancel button */
         .cancelbtn {
             padding: 14px 20px;
@@ -82,7 +65,7 @@
         
         /* Float cancel and signup buttons and add an equal width */
         .cancelbtn, .signupbtn {
-            float: left;
+            
             width: 50%;
         }
         
@@ -103,6 +86,10 @@
             .cancelbtn, .signupbtn {
                 width: 100%;
             }
+        }
+
+        .ptb{
+            padding: 80px;
         }
     </style>
 </head>
@@ -141,15 +128,45 @@
         </nav>
     
         <div class="container" style="text-align: center;">
-            <hr>
+            
             <form class="login100-form validate-form" action="signupcheck.php" method="POST" role="form">
-                <h1>Thank you for using our service</h1>
-
-                <div class="clearfix" style="align-items: center;">
+                <h1 class="ptb">Thank you for using our service</h1>
+                <hr>
+                <div class="clearfix py-3">
                     <button type="submit" class="signupbtn" onclick="history.back();">Back to home page</button>
                 </div>
-            </form>
+            </form><br><br><br><br><br>
         </div>
+        <div name="site-footer">
+            <footer class="footer" style="background-color:gainsboro;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9">
+                            <form>
+                                <label for="email">Sign up to learn and get special offer </label>
+                                <input type="text" id="email" name="email" placeholder="E-mail" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                                </svg><br><br>
+                                <h5>Contact Us</h5><br>
+                                <p>Email: &emsp;&emsp; friendlyneighborhood@gmail.com</p>
+                                <p>Address: &emsp; Bangkok 10000, Thailand</p>
+                            </form>
+                        </div>
+                        <div class="col-3" style="text-align: center;">
+                            <br><br><br><br>
+                            <h5 style="color: black;"> Follow Us </h5>
+                            <img style="height: 30px; width: 30px;" src="./Image/facebook.png">
+                            <img style="height: 30px; width: 30px;" src="./Image/instagram.png">
+                            <img style="height: 30px; width: 30px;" src="./Image/twitter.png">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
 </body>
 </html>

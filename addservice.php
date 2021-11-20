@@ -39,44 +39,34 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
-        <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <!--<li class="nav-item active">
-                    <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
-                </li>-->
-                <li class="nav-item active">
-                    <a class="nav-link" href="tips.php">Tips</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="aboutus.php">About Us</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 mx-3">
-                <!--<form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>-->
-                <div class="float-right">
-                    <?php
-                    if ($_SESSION["login"] == "start") {
-                        echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
-                        echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
-                    }
-                    else {
-                        echo '<a>'.$row[4]." ".$row[5].'</a>';
-                        echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
-                        echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
-                    }
-                    ?>
-                </div>
-            </form>
-        </div>
-    </nav>
+            <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                </ul>
+                <form class="form-inline my-2 my-lg-0 mx-3">
+                    <div class="float-right">
+                        <?php
+                        if ($_SESSION["login"] == "start") {
+                            echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
+                            echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
+                        }
+                        else {
+                            echo '<a>'.$row[0]." ".$row[1].'</a>';
+                            echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
+                            if ($_SESSION["login"] == "True" && $row[2]=='user') {
+                                echo '<a class="btn btn-primary" href="shoppingcart.php">My Cart</a>';
+                            }
+                            echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
+                        }
+                        ?>
+                    </div>
+                </form>
+            </div>
+        </nav>
     <div class="main-content">
         <!-- Top navbar -->
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">

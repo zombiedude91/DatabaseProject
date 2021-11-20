@@ -1,4 +1,15 @@
-<?php session_start() ?>
+<?php session_start(); require_once('connect.php'); 
+
+    $id = $_SESSION['uid'];
+    $q = "SELECT * FROM user WHERE UserID = '$id'";
+    
+    if (!$mysqli->query($q))
+        echo "UPDATE failed. Error: " .$mysqli->error;
+    $result = $mysqli->query($q);
+    $row = $result->fetch_array();
+
+    $mysqli->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +20,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
     
-        <title>Tips</title>
+        <title>About Us</title>
     
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,99 +32,63 @@
     
         <!-- Custom styles for this template -->
         <link href="css/landing-page.min.css" rel="stylesheet">
+        <link href="profile.css" rel="stylesheet">
     
     </head>
+
     <style>
-        * {
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+    
+        html {
             box-sizing: border-box;
         }
-
-    /* Style the body */
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-    }
-
-    /* Header/logo Title */
-    .header {
-        padding: 80px;
-        text-align: center;
-        background: #1abc9c;
-        color: white;
-    }
-
-    /* Increase the font size of the heading */
-    .header h1 {
-        font-size: 40px;
-    }
-
-    /* Style the navigation bar links */
-    .navbar a {
-        float: left;
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-    }
-
-    /* Right-aligned link */
-    .navbar a.right {
-        float: right;
-    }
-
-    /* Active/current link */
-    .navbar a.active {
-        background-color: #666;
-        color: white;
-    }
-
-    /* Column container */
-    .row {  
-        display: -ms-flexbox; /* IE10 */
-        display: flex;
-        -ms-flex-wrap: wrap; /* IE10 */
-        flex-wrap: wrap;
-    }
-
-    /* Create two unequal columns that sits next to each other */
-    /* Sidebar/left column */
-    .side {
-        -ms-flex: 30%; /* IE10 */
-        flex: 30%;
-        background-color: #f1f1f1;
-        padding: 20px;
-    }
-
-    /* Main column */
-    .main {   
-        -ms-flex: 70%; /* IE10 */
-        flex: 70%;
-        background-color: white;
-        padding: 20px;
-    }
-
-    /* Fake image, just for this example */
-    .fakeimg {
-        background-color: #aaa;
-        width: 100%;
-        padding: 20px;
-    }
-
-    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 700px) {
-        .row {   
-            flex-direction: column;
+        
+        *, *:before, *:after {
+            box-sizing: inherit;
         }
-    }
-
-    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-    @media screen and (max-width: 400px) {
-        .navbar a {
-            float: none;
-            width: 100%;
+        
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
         }
-    }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+        
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+        
+        .container {
+            padding: 0 16px;
+        }
+        
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .title {
+            color: grey;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -125,20 +100,28 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+        
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <!--<li class="nav-item active">
-                        <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
-                    </li>-->
-                    <li class="nav-item active">
-                        <a class="nav-link" href="tips.php">Tips</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="aboutus.php">About Us</a>
-                    </li>
                 </ul>
-                
+                <form class="form-inline my-2 my-lg-0 mx-3">
+                    <div class="float-right">
+                        <?php
+                        if ($_SESSION["login"] == "start") {
+                            echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
+                            echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
+                        }
+                        else {
+                            echo '<a>'.$row[4]." ".$row[5].'</a>';
+                            echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
+                            if ($_SESSION["login"] == "True" && $row[3]=='user') {
+                                echo '<a class="btn btn-primary" href="shoppingcart.php">My Cart</a>';
+                            }
+                            echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
+                        }
+                        ?>
+                    </div>
+                </form>
             </div>
         </nav>
         <div class="container-fluid p-5">

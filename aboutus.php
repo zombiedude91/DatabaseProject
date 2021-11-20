@@ -1,4 +1,15 @@
-<?php session_start(); require_once('connect.php'); ?>
+<?php session_start(); require_once('connect.php'); 
+
+    $id = $_SESSION['uid'];
+    $q = "SELECT * FROM user WHERE UserID = '$id'";
+    
+    if (!$mysqli->query($q))
+        echo "UPDATE failed. Error: " .$mysqli->error;
+    $result = $mysqli->query($q);
+    $row = $result->fetch_array();
+
+    $mysqli->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +32,7 @@
     
         <!-- Custom styles for this template -->
         <link href="css/landing-page.min.css" rel="stylesheet">
+        <link href="profile.css" rel="stylesheet">
     
     </head>
 
@@ -70,23 +82,7 @@
         .title {
             color: grey;
         }
-        
-        .button {
-            border: none;
-            outline: 0;
-            display: inline-block;
-            padding: 8px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-        }
-        
-        .button:hover {
-            background-color: #555;
-        }
-        
+
         @media screen and (max-width: 650px) {
             .column {
                 width: 100%;
@@ -107,17 +103,25 @@
         
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <!--<li class="nav-item active">
-                        <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
-                    </li>-->
-                    <li class="nav-item active">
-                        <a class="nav-link" href="tips.php">Tips</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="aboutus.php">About Us</a>
-                    </li>
                 </ul>
-                
+                <form class="form-inline my-2 my-lg-0 mx-3">
+                    <div class="float-right">
+                        <?php
+                        if ($_SESSION["login"] == "start") {
+                            echo '<a class="btn btn-primary mr-2" href="login.php">Login</a>';
+                            echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
+                        }
+                        else {
+                            echo '<a>'.$row[4]." ".$row[5].'</a>';
+                            echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
+                            if ($_SESSION["login"] == "True" && $row[3]=='user') {
+                                echo '<a class="btn btn-primary" href="shoppingcart.php">My Cart</a>';
+                            }
+                            echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
+                        }
+                        ?>
+                    </div>
+                </form>
             </div>
         </nav>
         <div class="container-fluid p-5">
@@ -128,13 +132,10 @@
                         <div class="row py-3">   
                             <div class="container">
                                 <h3>Our Company</h3><br>
-                                <p>Welcome to Friendly-Neighborhood. Created in 2021 by Apichayalux, Thanawin, and Makhapoom, Friendly-Neighborhood has gone through many developments from a university project. 
-
-We hope you enjoy our services as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
-</p><br>
+                                <p>Welcome to Friendly-Neighborhood. Created in 2021 by Apichayalux, Thanawin, and Makhapoom, Friendly-Neighborhood has gone through many developments from a university project. We hope you enjoy our services as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+                                </p><br>
                                 <h3>Our Service</h3>
                                 <p>Our service is to provide a way to connect people who need home services and those who provide it together. We are dedicated to providing you with the very best home service system. Our system is intended to provide you with the best experience with a focus on dependability, efficiency and adaptability.</p><br>
-
                             </div>
                         </div>
                     </div>

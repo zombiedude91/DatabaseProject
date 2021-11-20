@@ -56,7 +56,7 @@ require_once('connect.php');
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
+    <nav class="navbar navbar-expand-lg navbar-light py-3" style="background-color: #e3f2fd; font-size:x-large;">
         <a class="navbar-brand px-3" style="font-weight:bolder;" href="home.php">Friendly-Neighborhood</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,28 +64,8 @@ require_once('connect.php');
     
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <!--<li class="nav-item active">
-                    <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
-                </li>-->
-                <li class="nav-item active">
-                    <a class="nav-link" href="tips.php">Tips</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="aboutus.php">About Us</a>
-                </li>
             </ul>
-            <?php
-                if ($_SESSION["login"] == "True" && $row[2]=='admin') {
-                    echo '<a class="btn btn-primary mr-2 ml-3" href="editservice.php">Edit service</a>';
-                    echo '<a class="btn btn-primary mr-2 ml-3" href="addservice.php">Add service</a>';
-                }
-            ?>
-
             <form class="form-inline my-2 my-lg-0 mx-3">
-                <!--<form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>-->
                 <div class="float-right">
                     <?php
                     if ($_SESSION["login"] == "start") {
@@ -95,6 +75,9 @@ require_once('connect.php');
                     else {
                         echo '<a>'.$row[0]." ".$row[1].'</a>';
                         echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
+                        if ($_SESSION["login"] == "True" && $row[2]=='user') {
+                            echo '<a class="btn btn-primary" href="shoppingcart.php">My Cart</a>';
+                        }
                         echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
                     }
                     ?>
@@ -191,7 +174,7 @@ require_once('connect.php');
 
           <form action="addtocart.php?id=<?php echo $_GET["id"] ?>" method="POST">
             <div class="row">
-              <div class="card-body col-9">
+              <div class="card-body col-8">
                 <label for="date" class="ml-3" style="font-weight:bold;">Date:</label>&ensp;
                 <input type="date" id="date" name="date" required>
 
@@ -199,7 +182,7 @@ require_once('connect.php');
                 <input type="time" id="time" name="time" min="09:00" max="18:00" required>
               </div>
               
-              <div class="card-body col-3">
+              <div class="card-body col-4">
                 <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
               </div>
             </div>
@@ -266,7 +249,7 @@ require_once('connect.php');
                 <form action="review.php?id=<?php echo $_GET["id"] ?>" method="POST">
                   <div class="row">
 
-                    <div class="col-3">
+                    <div class="col-4">
                       <fieldset class="rating">
                         <label for="rating"><b>Rating:</b></label><br>
                         <input type="radio" id="star5" name="rating" value="5" <?php if ($rating==5) {echo "checked";} ?> /> 5 &nbsp;
@@ -279,7 +262,7 @@ require_once('connect.php');
 
                     <textarea class="col" id="review" name="review" placeholder="leave a review"><?php 
                       if (isset($comment)) {echo $comment;} ?></textarea>
-                    <input type="submit" class="btn btn-success col-3" value="Submit">
+                    <input type="submit" class="btn btn-success col-2" value="Submit">
 
                   </div>
                 </form>
