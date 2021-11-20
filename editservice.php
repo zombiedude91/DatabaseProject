@@ -55,7 +55,7 @@
                             echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
                         }
                         else {
-                            echo '<a>'.$row[0]." ".$row[1].'</a>';
+                            echo '<a>'.$row[4]." ".$row[5].'</a>';
                             echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
                             if ($_SESSION["login"] == "True" && $row[2]=='user') {
                                 echo '<a class="btn btn-primary" href="shoppingcart.php">My Cart</a>';
@@ -102,32 +102,32 @@
                                         <div class="col-md-12">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="firstname">image</label>
-                                                <input type="text" input="<?php echo 'value=' . $row[1]; ?>" name="image" class="form-control form-control-alternative" required>
+                                                <input type="text" value="<?php echo $row[0][1]; ?>" name="image" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="lastname">Service Name</label>
-                                                <input type="text" input="<?php echo 'value=' . $row[2]; ?>" name="service" class="form-control form-control-alternative" required>
+                                                <input type="text" value="<?php echo $row[0][2]; ?>" name="service" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="lastname">Description</label>
-                                                <input type="text" input="<?php echo 'value=' . $row[3]; ?>" name="description" class="form-control form-control-alternative" required>
+                                                <textarea class="form-control form-control-alternative" id="description" name="description" placeholder="leave a review"><?php echo $row[0][3];?></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group focused validate-input">
                                                 <label class="form-control-label" for="lastname">Price</label>
-                                                <input type="text" input="<?php echo 'value=' . $row[4]; ?>" name="price" class="form-control form-control-alternative" required>
+                                                <input type="text" value="<?php echo $row[0][4]; ?>" name="price" class="form-control form-control-alternative" required>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <hr class="my-4">
                                 <div>
-                                    <a onclick="history.back();" type="button" class="btn btn-default">Back</a>
+                                    <button onclick="history.back();" type="button" class="btn btn-default">Back</button>
                                     <button type="submit" class="btn btn-success">Confirm</button>
                                 </div>
                             </form>

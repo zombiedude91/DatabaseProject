@@ -116,7 +116,7 @@
                                 </div>
                                 <hr class="my-4">
                                 <div>
-                                    <a onclick="history.back();" type="button" class="btn btn-default">Back</a>
+                                    <button onclick="history.back();" type="button" class="btn btn-default">Back</button>
                                     <button type="submit" class="btn btn-success">Confirm</button>
                                 </div>
                             </form>

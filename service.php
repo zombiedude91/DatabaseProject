@@ -73,10 +73,6 @@ require_once('connect.php');
                         echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
                     }
                     else {
-                        if ($_SESSION["login"] == "True" && $row[2]=='admin') {
-                            echo '<a class="btn btn-primary" href="editservice.php">Edit Service</a>';
-                            echo '<a class="btn btn-primary" href="addservice.php">Add Service</a>';
-                        }
                         echo '<a>'.$row[0]." ".$row[1].'</a>';
                         echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
                         if ($_SESSION["login"] == "True" && $row[2]=='user') {
@@ -107,11 +103,21 @@ require_once('connect.php');
 
           $q = "SELECT ServiceID, ServiceName FROM service";
           $row = mysqli_fetch_all($mysqli->query($q));
-          $mysqli->close();
+          
 
           foreach ($row as $i) {
             echo '<a href="service.php?id=' . $i[0] . '" class="list-group-item">' . $i[1] . '</a>';
           }
+
+          $q = "SELECT FirstName, LastName, UserType FROM user WHERE UserID = '$uid'";
+          $row = mysqli_fetch_row($mysqli->query($q));
+          $mysqli->close();
+
+          if ($_SESSION["login"] == "True" && $row[2]=='admin') {
+            echo '<a class="btn btn-primary mt-2 col-12" href="editservice.php?id='.$_GET['id'].'">Edit Service</a>';
+            echo '<a class="btn btn-primary mt-2 col-12" href="addservice.php">Add Service</a>';
+          }
+
           ?>
 
         </div>
