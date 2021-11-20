@@ -18,6 +18,13 @@ require_once('connect.php');
 
     $q = "SELECT FirstName, LastName FROM user WHERE UserID = '$uid'";
     $row = mysqli_fetch_row($mysqli->query($q));
+
+    $star = "SELECT ROUND(AVG(Rating),1) FROM review WHERE ServiceID ='" . $_GET["id"] . "';";
+    $starvalue = mysqli_fetch_row($mysqli->query($star));
+
+    if ($starvalue[0] == NULL) {
+      $starvalue[0] = 0;
+    }
     $mysqli->close();
 ?>
 
@@ -41,6 +48,8 @@ require_once('connect.php');
     
         <!-- Custom styles for this template -->
         <link href="css/landing-page.min.css" rel="stylesheet">
+        <link href="css/shop-item.css" rel="stylesheet">
+        <link href="mycss.css" rel="stylesheet">
     
     </head>
 </head>
@@ -141,6 +150,18 @@ require_once('connect.php');
             <div class="card-body col-9">
               <h3 class="card-title col-md"><?php echo $row[0][2]; ?></h3>
               <p class="card-text col-md"><?php echo $row[0][3]; ?></p>
+              <span class="text-warning col-md">
+                <?php
+
+                for ($i = 0; $i < 5; $i++) {
+                  if ($i + 1 <= $starvalue[0]) {
+                    echo '<i class="fas fa-star"></i> ';
+                  } else {
+                    echo '<i class="far fa-star"></i> ';
+                  }
+                }
+                echo '</span>';
+                echo $starvalue[0] . ' stars'; ?>
             </div>
             
             <div class="card-body col-3">
@@ -200,18 +221,62 @@ require_once('connect.php');
             <!--check if user is logged in if not hide review section-->
 
             <?php
+              $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
 
-            if (isset($_SESSION["uid"])) {
-              echo '
-            <form action="review.php?id=' . $_GET["id"] . '" method="POST">
-              <div class="row">
+              if ($mysqli->connect_errno) {
+                echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+              }
 
-                <textarea class="col" id="review" name="review" placeholder="leave a review"></textarea>
+              $review = "SELECT * FROM review r INNER JOIN user u ON r.UserID=u.UserID WHERE r.ServiceID ='" . $_GET["id"] . "';";
+              $getreview = mysqli_fetch_all($mysqli->query($review));
+              
+              $mysqli->close();
 
-                <input type="submit" class="btn btn-success col-3" value="Submit">
-              </div>
-            </form>';
-            }
+              foreach ($getreview as $r) {
+                echo '<p>' . $r[4] . '</p>';
+                echo '<small class="text-muted">Posted by ' . $r[9] . '</small>';
+  
+                echo '<span class="text-warning">   ';
+  
+                for ($i = 0; $i < 5; $i++) {
+                  if ($i + 1 <= $r[3]) {
+                    echo '<i class="fas fa-star"></i> ';
+                  } else {
+                    echo '<i class="far fa-star"></i> ';
+                  }
+                }
+                echo '</span>';
+  
+                echo '<hr>';
+              }
+
+              if (isset($_SESSION["uid"])) {
+                echo '
+                <form action="review.php?id=' . $_GET["id"] . '" method="POST">
+                  <div class="row">
+
+                    <div class="col-3">
+                      <fieldset class="rating">
+                        <label for="rating"><b>Rating:</b></label><br>
+                        <input type="radio" id="star5" name="rating" value="5" />
+                        <label for="star5">5 &nbsp;</label>
+                        <input type="radio" id="star4" name="rating" value="4" />
+                        <label for="star4">4 &nbsp;</label>
+                        <input type="radio" id="star3" name="rating" value="3" />
+                        <label for="star3">3 &nbsp;</label>
+                        <input type="radio" id="star2" name="rating" value="2" />
+                        <label for="star2">2 &nbsp;</label>
+                        <input type="radio" id="star1" name="rating" value="1" />
+                        <label for="star1">1 &nbsp;</label>
+                      </fieldset>
+
+                    </div>
+                    <textarea class="col" id="review" name="review" placeholder="leave a review"></textarea>
+
+                    <input type="submit" class="btn btn-success col-3" value="Submit">
+                  </div>
+                </form>';
+              }
 
             ?>
 
