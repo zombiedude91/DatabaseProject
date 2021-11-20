@@ -66,6 +66,8 @@ require_once('connect.php');
                     <a class="nav-link" href="aboutus.php">About Us</a>
                 </li>
             </ul>
+            <a class="btn btn-primary mr-2 ml-3" href="addservice.php">Add service</a>
+            
             <form class="form-inline my-2 my-lg-0 mx-3">
                 <!--<form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" />
@@ -87,7 +89,6 @@ require_once('connect.php');
             </form>
         </div>
     </nav>
-    <a class="btn btn-primary mr-2 ml-3" href="addservice.php" style="float: right;" >Add service</a>
   <!-- Page Content -->
   <div class="container">
 
