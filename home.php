@@ -11,7 +11,7 @@
 
     $id = $_SESSION['uid'];
 
-    $q = "SELECT FirstName, LastName FROM user WHERE UserID = '$id'";
+    $q = "SELECT FirstName, LastName, UserType FROM user WHERE UserID = '$id'";
     $row = mysqli_fetch_row($mysqli->query($q));
     $mysqli->close();
 ?>
@@ -51,7 +51,19 @@
                 <!--<li class="nav-item active">
                     <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
                 </li>-->
-                <li class="nav-item active">
+                <?php
+                    if ($_SESSION["login"] == "True" && $row[2]=='admin') {
+                        echo '<li class="nav-item active">
+                            <a class="nav-link" href="service.php?id=1">Admin</a>
+                        </li>';
+                    }
+                    if ($_SESSION["login"] == "True" && $row[2]=='staff') {
+                        echo '<li class="nav-item active">
+                            <a class="nav-link" href="staff.php">Staff</a>
+                        </li>';
+                    }
+                ?>
+                <!--<li class="nav-item active">
                     <a class="nav-link" href="service.php?id=1">Service</a>
                 </li>
                 <li class="nav-item active">
@@ -59,7 +71,7 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="aboutus.php">About Us</a>
-                </li>
+                </li>-->
             </ul>
             <form class="form-inline my-2 my-lg-0 mx-3">
                 <!--<form class="form-inline my-2 my-lg-0">
@@ -75,6 +87,11 @@
                     else {
                         echo '<a>'.$row[0]." ".$row[1].'</a>';
                         echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
+                        if ($_SESSION["login"] == "True" && $row[2]=='user') {
+                            echo '<li class="nav-item active">
+                                <a class="nav-link" href="shoppingcart.php">Cart</a>
+                            </li>';
+                        }
                         echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
                     }
                     ?>
@@ -120,7 +137,6 @@
                             <p class="lead mb-0">If you want to find some service, search here!</p>
                         </a>
                     </div>
-
 
                 </div>
 
@@ -213,11 +229,8 @@
             </div>
         </footer>
     </div>
-    
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    
 </body>
 </html>

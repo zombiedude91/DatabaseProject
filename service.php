@@ -16,7 +16,7 @@ require_once('connect.php');
 
     $uid = $_SESSION['uid'];
 
-    $q = "SELECT FirstName, LastName FROM user WHERE UserID = '$uid'";
+    $q = "SELECT FirstName, LastName, UserType FROM user WHERE UserID = '$uid'";
     $row = mysqli_fetch_row($mysqli->query($q));
 
     $star = "SELECT ROUND(AVG(Rating),1) FROM review WHERE ServiceID ='" . $_GET["id"] . "';";
@@ -73,8 +73,13 @@ require_once('connect.php');
                     <a class="nav-link" href="aboutus.php">About Us</a>
                 </li>
             </ul>
-            <a class="btn btn-primary mr-2 ml-3" href="addservice.php">Add service</a>
-            
+            <?php
+                if ($_SESSION["login"] == "True" && $row[2]=='admin') {
+                    echo '<a class="btn btn-primary mr-2 ml-3" href="editservice.php">Edit service</a>';
+                    echo '<a class="btn btn-primary mr-2 ml-3" href="addservice.php">Add service</a>';
+                }
+            ?>
+
             <form class="form-inline my-2 my-lg-0 mx-3">
                 <!--<form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" />
@@ -141,7 +146,7 @@ require_once('connect.php');
             $mysqli->close();
           ?>
 
-          <img class="card-img-top img-fluid" src=".\img\Air-Conditioning.jpg" alt="">
+          <img class="card-img-top img-fluid" src=".\img\<?php echo $row[0][1];?>"/>
 
           <div class="row">
             

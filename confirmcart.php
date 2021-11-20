@@ -50,6 +50,6 @@ foreach ($row as $i) {
 }
 
 //redirect
-header("Location: home.php");
+header("Location: thankyou.html");
 
 ?>
