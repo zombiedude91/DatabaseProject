@@ -48,6 +48,7 @@ require_once('connect.php');
     
         <!-- Custom styles for this template -->
         <link href="css/landing-page.min.css" rel="stylesheet">
+        <link href="profile.css" rel="stylesheet">
     
     </head>
 </head>

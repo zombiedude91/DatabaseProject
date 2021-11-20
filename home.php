@@ -35,8 +35,19 @@
     
         <!-- Custom styles for this template -->
         <link href="css/landing-page.min.css" rel="stylesheet">
+        <link href="profile.css" rel="stylesheet">
     
     </head>
+    <style>
+        .pb {
+            padding-bottom: 50px;
+            
+        }
+        .bg-white{
+            background-color: white;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -63,21 +74,8 @@
                         </li>';
                     }
                 ?>
-                <!--<li class="nav-item active">
-                    <a class="nav-link" href="service.php?id=1">Service</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="tips.php">Tips</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="aboutus.php">About Us</a>
-                </li>-->
             </ul>
             <form class="form-inline my-2 my-lg-0 mx-3">
-                <!--<form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>-->
                 <div class="float-right">
                     <?php
                     if ($_SESSION["login"] == "start") {
@@ -88,9 +86,7 @@
                         echo '<a>'.$row[0]." ".$row[1].'</a>';
                         echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
                         if ($_SESSION["login"] == "True" && $row[2]=='user') {
-                            echo '<li class="nav-item active">
-                                <a class="nav-link" href="shoppingcart.php">Cart</a>
-                            </li>';
+                            echo '<a class="btn btn-primary" href="shoppingcart.php">My Cart</a>';
                         }
                         echo '<a class="btn btn-secondary" href="logout.php">Logout</a>';
                     }
@@ -110,25 +106,17 @@
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                     <form action="shopfilter.php" method="POST" role="form">
-                        <!--<div class="form-row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                <input name="search" class="form-control form-control-lg" placeholder="Search for art">
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Browse</button>
-                            </div>
-                        </div>-->
                     </form>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="features-icons bg-light text-center">
+    <section class="features-icons bg-light text-center bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-item mx-auto mb-lg-0 mb-lg-3">
                         <a class="stretched-link" href="service.php?id=1" style="text-decoration:none; color:black;">
                             <div class="features-icons-icon d-flex">
                                 <i class="icon-screen-desktop m-auto text-primary"></i>
@@ -137,11 +125,10 @@
                             <p class="lead mb-0">If you want to find some service, search here!</p>
                         </a>
                     </div>
-
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-item mx-auto mb-lg-0 mb-lg-3">
                         <a class="stretched-link" href="tips.php" style="text-decoration:none; color:black;">
                             <div class="features-icons-icon d-flex">
                                 <i class="icon-layers m-auto text-primary"></i>
@@ -168,7 +155,7 @@
     
     <!-- Image Showcases -->
     <section class="showcase">
-        <div class="container-fluid p-5">
+        <div class="container-fluid pb">
             <div class="py-5" style="text-align: center;">
                 <!--font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;-->
                 <h1 style="text-align: center;">Service Categories</h1>
