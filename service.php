@@ -145,7 +145,7 @@ require_once('connect.php');
           <div class="row">
             
             <div class="card-body col-9">
-              <h3 class="card-title col-md"><?php echo $row[0][2]; ?></h3>
+              <h1 class="card-title col-md"><?php echo $row[0][2]; ?></h1>
               <p class="card-text col-md"><?php echo $row[0][3]; ?></p>
               <span class="text-warning col-md">
                 <?php
@@ -162,7 +162,7 @@ require_once('connect.php');
             </div>
             
             <div class="card-body col-3">
-              <h4 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h4>              
+              <h2 class="card-title col-md" style="text-align:center;"><?php echo $row[0][4]; ?> THB</h2>              
             </div>
             
           </div>
@@ -193,7 +193,7 @@ require_once('connect.php');
               </div>
               
               <div class="card-body col-4">
-                <input type="submit" class="btn btn-success" style="text-align:center;" value="Choose This Service">
+                <input type="submit" class="btn btn-success col-12" style="text-align:center;" value="Choose This Service">
               </div>
             </div>
           </form>
