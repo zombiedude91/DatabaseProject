@@ -229,6 +229,9 @@ require_once('connect.php');
               
               $mysqli->close();
 
+              $rating = NULL;
+              $comment = NULL;
+
               foreach ($getreview as $r) {
                 echo '<p>' . $r[4] . '</p>';
                 echo '<small class="text-muted">Posted by ' . $r[9] . ' ' . $r[10] . '</small> &nbsp;';
@@ -245,14 +248,11 @@ require_once('connect.php');
                 echo '</span>';
   
                 echo '<hr>';
-              }
 
-              $rating = NULL;
-              $comment = NULL;
-
-              if (isset($getreview[0][1]) && $getreview[0][1] == $_SESSION["uid"]) {
-                $rating = $getreview[0][3];
-                $comment = $getreview[0][4];
+                if (isset($r[1]) && $r[1] == $_SESSION["uid"]) {
+                  $rating = $r[3];
+                  $comment = $r[4];
+                }
               }
 
               if (isset($_SESSION["uid"])) { ?>
@@ -271,7 +271,7 @@ require_once('connect.php');
                     </div>
 
                     <textarea class="col" id="review" name="review" placeholder="leave a review"><?php 
-                      if (isset($comment)) {echo $comment;} ?></textarea>
+                      echo $comment; ?></textarea>
                     <input type="submit" class="btn btn-success col-2" value="Submit">
 
                   </div>
