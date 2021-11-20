@@ -73,6 +73,10 @@ require_once('connect.php');
                         echo '<a class="btn btn-secondary" href="signup.php">Sign Up</a>';
                     }
                     else {
+                        if ($_SESSION["login"] == "True" && $row[2]=='admin') {
+                            echo '<a class="btn btn-primary" href="editservice.php">Edit Service</a>';
+                            echo '<a class="btn btn-primary" href="addservice.php">Add Service</a>';
+                        }
                         echo '<a>'.$row[0]." ".$row[1].'</a>';
                         echo '<a class="btn btn-primary mr-2 ml-3" href="user-profile.php">My Profile</a>';
                         if ($_SESSION["login"] == "True" && $row[2]=='user') {
