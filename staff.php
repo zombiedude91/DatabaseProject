@@ -108,7 +108,7 @@
                             echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
                             }
 
-                            $q = "SELECT * FROM booking b join service s join user u ON b.ServiceID = s.ServiceID AND u.UserID = b.UserID WHERE b.UserID = '$uid'";
+                            $q = "SELECT * FROM staff s, staffassigned sa, booking b, user u WHERE  s.StaffID=sa.StaffID AND sa.BookingID=b.BookingID AND b.UserID=u.UserID AND UserID = '$uid'";
                             $row = mysqli_fetch_all($mysqli->query($q));
                             $mysqli->close();
 
@@ -116,7 +116,6 @@
                         ?>
 
                         <tr>
-                            
                             <td><?php echo $i[8]; ?></td>
                             <td style="text-align:center;"><?php echo $i[18]; ?> </td>
                             <td style="text-align:center;"><?php echo date("d/m/Y", strtotime($i[4])); ?></td>
@@ -124,17 +123,11 @@
                         </tr>
                         
                         <?php } ?>
-                        
                     </table>
-
                 </div>
-
             </div>
         </div>
         <br /><br /><br /><br /><br /><br />
-
-        
-
     </div> <!-- end wrapper -->
 </body>
 </html>
