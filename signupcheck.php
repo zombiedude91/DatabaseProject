@@ -26,6 +26,32 @@ if (!$mysqli->query($q)) {
     echo "UPDATE failed. Error: " . $mysqli->error;
 }
 
+$mysqli->close();
+
+if ($usertype=="staff") {
+
+
+    $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
+
+    if ($mysqli->connect_errno) {
+        echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
+    }
+
+    $p = "SELECT MAX(UserID) FROM user;";
+
+    $row = mysqli_fetch_all($mysqli->query($q));
+
+    $q = "INSERT INTO staff (UserID) VALUES ('$row[0]');";
+
+    echo $q;
+
+    if (!$mysqli->query($q)) {
+        echo "UPDATE failed. Error: " . $mysqli->error;
+    }
+
+    $mysqli->close();
+}
+
 //redirect
 header("Location: home.php");
 
