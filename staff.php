@@ -108,7 +108,8 @@
                             echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
                             }
 
-                            $q = "SELECT * FROM staff s, staffassigned sa, booking b, user u WHERE  s.StaffID=sa.StaffID AND sa.BookingID=b.BookingID AND b.UserID=u.UserID AND UserID = '$uid'";
+                            $q = "SELECT * FROM staff s INNER JOIN staffassign sa INNER JOIN booking b INNER JOIN user u 
+                                ON s.StaffID=sa.StaffID AND sa.BookingID=b.BookingID AND b.UserID=u.UserID WHERE s.UserID = ".$uid;
                             $row = mysqli_fetch_all($mysqli->query($q));
                             $mysqli->close();
 
