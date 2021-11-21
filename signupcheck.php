@@ -28,8 +28,8 @@ if (!$mysqli->query($q)) {
 
 $mysqli->close();
 
-if ($usertype=="staff") {
 
+if ($usertype="staff") {
 
     $mysqli = new mysqli('localhost', 'root', '', 'homeservice');
 
@@ -37,11 +37,7 @@ if ($usertype=="staff") {
         echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
     }
 
-    $p = "SELECT MAX(UserID) FROM user;";
-
-    $row = mysqli_fetch_all($mysqli->query($q));
-
-    $q = "INSERT INTO staff (UserID) VALUES ('$row[0]');";
+    $q = "INSERT INTO staff (UserID) SELECT MAX(UserID) FROM user;";
 
     echo $q;
 
