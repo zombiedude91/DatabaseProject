@@ -84,11 +84,11 @@
                 <tr>
                         
                         <th width="20%" style="text-align:center;">Service Name</th>
-                        <th width="10%" style="text-align:center;">Address</th>
-                        <th width="10%" style="text-align:center;">Price</th>
-                        <th width="10%" style="text-align:center;">Date</th>
-                        <th width="10%" style="text-align:center;">Time</th>
-                        <th width="20%" style="text-align:center;">Assign Staff</th>
+                        <th width="20%" style="text-align:center;">Address</th>
+                        <th width="8%" style="text-align:center;">Price</th>
+                        <th width="9%" style="text-align:center;">Date</th>
+                        <th width="8%" style="text-align:center;">Time</th>
+                        <th width="15%" style="text-align:center;">Assign Staff</th>
                         
                     </tr>
 
@@ -99,9 +99,9 @@
                         echo $mysqli->connect_errno . ": " . $mysqli->connect_error;
                         }
 
-                        $q = "SELECT * FROM booking b join service s join user u ON b.ServiceID = s.ServiceID AND u.UserID = b.UserID  WHERE b.UserID = '$uid'";
+                        $q = "SELECT * FROM booking b INNER JOIN service s INNER JOIN user u ON b.ServiceID = s.ServiceID AND u.UserID = b.UserID";
                         $row = mysqli_fetch_all($mysqli->query($q));
-                        $mysqli->close();
+                        
 
                         foreach ($row as $i) {
                     ?>
@@ -115,32 +115,28 @@
                         <td style="text-align:center;"><?php echo date("h.i a", strtotime($i[5])); ?></td>
                         <td style="text-align:center;">
                         <?php
-                            
-                            $q = "SELECT * FROM booking b, staffassign sa WHERE b.BookingID = sa.BookingID";
-                            $row = mysqli_fetch_all($mysqli->query($q));
-                            $mysqli->close();
-
-                            if ($i[7]!=NULL){
-
-                            }
-                            
-                            else{
-                                echo '<form action="selectstaff.php"><input type="submit" value="Assign"></form>';
-                            }
-                        ?>
+                            $q2='SELECT * FROM staffassign sa INNER JOIN staff s INNER JOIN user u
+                                ON s.StaffID = sa.StaffID AND s.UserID = u.UserID Where sa.BookingID = '.$i[0];
+                            $row2 = mysqli_fetch_all($mysqli->query($q2));
+                            if (isset($row2[0][0])) {
+                                echo $row2[0][9].' '.$row2[0][10];
+                            } else {
+					    ?>
+                            <form action="assign.php?id=<?php echo $i[0] ?>" method="POST">
+                                <select name="assign" id="assign">
                         <?php
-						$q='select * from staff;';
-						if($result=$mysqli->query($q)){
-							while($row=$result->fetch_array()){
-								echo '<option value="'.$row[0].'">'.$row[0].'</option>';
-							}
-						}else{
-							echo 'Query error: '.$mysqli->error;
-						}
-					?>
+                            $q3='SELECT * FROM staff s INNER JOIN user u ON s.UserID = u.UserID;';
+                            $row3 = mysqli_fetch_all($mysqli->query($q3));
+                            foreach ($row3 as $i3) {
+                                echo '<option value="'.$i3[0].'">'.$i3[6].' '.$i3[7].'</option>';
+                            }
+					    ?>
+                                </select> <br>
+                                <input type="submit" class="btn btn-success mt-2" value="Submit">
+                            </form>
                         </td>
                     </tr>
-                    <?php } ?>
+                    <?php }} $mysqli->close(); ?>
                 </table>
             </div>
         </div>
